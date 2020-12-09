@@ -1,0 +1,126 @@
+---
+title: "Remove_Duplicate_Data"
+author: "Josie Lesage"
+date: "12/9/2020"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+
+# Setup packages
+library(rgbif)
+library(tidyverse)
+```
+
+
+## Cleaning data and removing potential duplicates
+The code chunks below will remove the duplicated occurrence records for all records gathered from GBIF that are already present in the datasets downloaded from other sources (fungi, arthros, plants). To do this, we will directly call on the other dataset data and remove all duplicates from the data we downloaded from GBIF above. 
+
+Below that, there's a chunk to just extract and save the .csv files to the clean data folder.
+
+### Arthropods
+Before running this again **CHANGE THE FILE PATH TO THE CORRECT DATE** in the code below -- remember to change "Dec 2020" to whatever the correct date/folder you created at the start is.
+
+```{r removing duplicates from Bugs}
+# This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+arthro_raw <- read.delim("Dec 2020/Raw/Arthropods/occurrence.txt")
+
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
+inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
+  rename(institutionCode = InstitutionCode,
+         collectionCode = CollectionCode)
+
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+arthro_clean1 <- anti_join(arthro_raw, inCode, by = "institutionCode")
+arthro_clean2 <- anti_join(arthro_clean1, inCode, by = "collectionCode")
+
+# This line saves the data as a .csv in the appropriate folder with a new name
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+write.csv (arthro_clean2, file = "Dec 2020/Clean Data/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
+```
+
+If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
+
+### Fungi
+Before running this again **CHANGE THE FILE NAME TO THE CORRECT DATE** in the code below -- remember to change "Dec 2020" to whatever the correct date/folder you created at the start is.
+
+```{r removing duplicates from Fungi}
+# This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+fungi_raw <- read.delim("Dec 2020/Raw/Fungi/occurrence.txt")
+
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
+inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
+  rename(institutionCode = InstitutionCode,
+         collectionCode = CollectionCode)
+
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+fungi_clean1 <- anti_join(fungi_raw, inCode, by = "institutionCode")
+fungi_clean2 <- anti_join(fungi_clean1, inCode, by = "collectionCode")
+
+# This line saves the data as a .csv in the appropriate folder with a new name
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+write.csv (fungi_clean2, file = "Dec 2020/Clean Data/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
+```
+
+
+If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
+
+### Plants
+Before running this again **CHANGE THE FILE NAME TO THE CORRECT DATE** in the code below -- remember to change "Dec 2020" to whatever the correct date/folder you created at the start is.
+
+```{r removing duplicates from Plants}
+# This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+plant_raw <- read.delim("Dec 2020/Raw/Plants/occurrence.txt")
+
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
+inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
+  rename(institutionCode = InstitutionCode,
+         collectionCode = CollectionCode)
+
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+plant_clean1 <- anti_join(plant_raw, inCode, by = "institutionCode")
+plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
+
+# This line saves the data as a .csv in the appropriate folder with a new name
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
+write.csv (plant_clean2, file = "Dec 2020/Clean Data/GBIF_plants_clean_Dec 2020.csv", na="", row.names=FALSE)
+```
+
+
+If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
+
+
+### The other groups
+For the other groups, we just want to save everything to the correct folder.
+
+Don't forget to change the date in the second half of the code for each group.
+```{r}
+amphibia <- read.delim("Dec 2020/Raw/Amphibia/occurrence.txt")
+mammalia <- read.delim("Dec 2020/Raw/Mammals/occurrence.txt")
+reptilia <- read.delim("Dec 2020/Raw/Reptiles/occurrence.txt")
+aves <- read.delim("Dec 2020/Raw/Aves/occurrence.txt")
+fish <- read.delim("Dec 2020/Raw/Fish/occurrence.txt")
+inverts <- read.delim("Dec 2020/Raw/Inverts/occurrence.txt")
+
+## **__THIS IS WHERE YOU WOULD CHANGE THE DATES FOR EACH GROUP__**
+write.csv (amphibia, file = "Dec 2020/Clean Data/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (mammalia, file = "Dec 2020/Clean Data/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (reptilia, file = "Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves, file = "Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish, file = "Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (inverts, file = "Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
+
+```
+
+
+If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
+
+Also : apparently, after saving these files, you'll want to open them and save them as a .csv UTC-9 format since the raw .csv format doesn't play nice with the upload system. 
+
+
+Voila! You did it!
