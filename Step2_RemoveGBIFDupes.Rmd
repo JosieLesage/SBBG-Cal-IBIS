@@ -102,20 +102,20 @@ For the other groups, we just want to save everything to the correct folder.
 
 Don't forget to change the date in the second half of the code for each group.
 ```{r}
-amphibia <- read.delim("Dec 2020/Raw/Amphibia/occurrence.txt")
-mammalia <- read.delim("Dec 2020/Raw/Mammals/occurrence.txt")
-reptilia <- read.delim("Dec 2020/Raw/Reptiles/occurrence.txt")
-aves <- read.delim("Dec 2020/Raw/Aves/occurrence.txt")
-fish <- read.delim("Dec 2020/Raw/Fish/occurrence.txt")
-inverts <- read.delim("Dec 2020/Raw/Inverts/occurrence.txt")
+amphibia <- read.delim("Data/Dec 2020/Raw/Amphibia/occurrence.txt")
+mammalia <- read.delim("Data/Dec 2020/Raw/Mammals/occurrence.txt")
+reptilia <- read.delim("Data/Dec 2020/Raw/Reptiles/occurrence.txt")
+aves <- read.delim("Data/Dec 2020/Raw/Aves/occurrence.txt")
+fish <- read.delim("Data/Dec 2020/Raw/Fish/occurrence.txt")
+inverts <- read.delim("Data/Dec 2020/Raw/Inverts/occurrence.txt")
 
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATES FOR EACH GROUP__**
-write.csv (amphibia, file = "Dec 2020/Clean Data/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (mammalia, file = "Dec 2020/Clean Data/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (reptilia, file = "Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves, file = "Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (fish, file = "Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (inverts, file = "Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (amphibia, file = "Data/Dec 2020/Clean Data/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (mammalia, file = "Data/Dec 2020/Clean Data/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (reptilia, file = "Data/Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves, file = "Data/Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish, file = "Data/Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (inverts, file = "Data/Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
 
 ```
 

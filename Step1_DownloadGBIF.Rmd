@@ -281,31 +281,31 @@ Downloading the .zip files by running the code below will also take a small chun
 ```{r}
 occ_download_get("0132501-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132502-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132503-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132504-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132505-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132506-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132507-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132547-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 occ_download_get("0132550-200613084148143",
                  overwrite = TRUE,
-                 path = "Dec 2020/Raw")
+                 path = "Data/Dec 2020/Raw")
 ```
 
 
