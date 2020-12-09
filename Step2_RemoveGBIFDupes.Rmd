@@ -20,8 +20,10 @@ The code chunks below will remove the duplicated occurrence records for all reco
 
 Below that, there's a chunk to just extract and save the .csv files to the clean data folder.
 
+To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
+
 ### Arthropods
-Before running this again **CHANGE THE FILE PATH TO THE CORRECT DATE** in the code below -- remember to change "Dec 2020" to whatever the correct date/folder you created at the start is.
+Before running this again, make sure you changed the file path to the corect date in the code below. The replace all thing above should have done this!
 
 ```{r removing duplicates from Bugs}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
@@ -119,8 +121,5 @@ write.csv (inverts, file = "Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", n
 
 
 If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
-
-Also : apparently, after saving these files, you'll want to open them and save them as a .csv UTC-9 format since the raw .csv format doesn't play nice with the upload system. 
-
 
 Voila! You did it!

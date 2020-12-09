@@ -17,11 +17,13 @@ library(tidyverse)
 This file is intended to gather GBIF records for species on the California Channel Islands, which will be used to update the Cal-IBIS repository. **Before getting started**, create a folder for the date at which you are doing the download (for example, "Dec 2020"). 
 
 The file location should look something like:
-> "C:\Users\Josie\Dropbox\SBBG\Cal-IBIS\Cal_IBIS\NAU documents\R_scripts\Josie R Code\SBBG-Cal-IBIS\Data\**Month YY**"
+> "C:\Users\Josie\Dropbox\SBBG\Cal-IBIS\Cal_IBIS\Methods for Updating Collections\SBBG-Cal-IBIS-GBIF\Data\**Month YY**"
 
 Capitalization matters here, so be careful and consistent. 
 
 Then, within that folder, **create a "Raw" folder and "Clean Data" folder** -- this is where all of your files will end up.
+
+Finally, hit ctrl+F within here, and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
 
 # Gathering GBIF Data
 To begin, we'll gather the data we're interested in from GBIF. We'll download several separate datasets - these will end up as .zip folders in the "Data/Month YY" folder we created, and will need to be unzipped later.
