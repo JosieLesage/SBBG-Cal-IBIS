@@ -30,7 +30,7 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 ```{r removing duplicates from Bugs}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-arthro_raw <- read.delim("Dec 2020/Raw/Arthropods/occurrence.txt")
+arthro_raw <- read.delim("Data/Dec 2020/Raw/Arthropods/occurrence.txt")
 
 # This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
 inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
@@ -43,7 +43,7 @@ arthro_clean2 <- anti_join(arthro_clean1, inCode, by = "collectionCode")
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (arthro_clean2, file = "Dec 2020/Clean Data/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (arthro_clean2, file = "Data/Dec 2020/Clean Data/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 ### Fungi
@@ -51,7 +51,7 @@ write.csv (arthro_clean2, file = "Dec 2020/Clean Data/GBIF_arthropods_clean_Dec 
 ```{r removing duplicates from Fungi}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-fungi_raw <- read.delim("Dec 2020/Raw/Fungi/occurrence.txt")
+fungi_raw <- read.delim("Data/Dec 2020/Raw/Fungi/occurrence.txt")
 
 # This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
 inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
@@ -64,7 +64,7 @@ fungi_clean2 <- anti_join(fungi_clean1, inCode, by = "collectionCode")
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (fungi_clean2, file = "Dec 2020/Clean Data/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fungi_clean2, file = "Data/Dec 2020/Clean Data/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 ### Plants
@@ -72,7 +72,7 @@ write.csv (fungi_clean2, file = "Dec 2020/Clean Data/GBIF_fungi_clean_Dec 2020.c
 ```{r removing duplicates from Plants}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-plant_raw <- read.delim("Dec 2020/Raw/Plants/occurrence.txt")
+plant_raw <- read.delim("Data/Dec 2020/Raw/Plants/occurrence.txt")
 
 # This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
 inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
@@ -85,18 +85,16 @@ plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (plant_clean2, file = "Dec 2020/Clean Data/GBIF_plants_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (plant_clean2, file = "Data/Dec 2020/Clean Data/GBIF_plants_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 
 If you run into the "Error in file(file, "rt") : cannot open the connection" error, check that you unzipped the files!
 
 
-### The other groups
-For the other groups, we just want to save everything to the correct folder.
+## Cut up the big files into multiple parts
 
-Don't forget to change the date in the second half of the code for each group.
-```{r}
+```{r cut up big files}
 amphibia <- read.delim("Data/Dec 2020/Raw/Amphibia/occurrence.txt", quote = "")
 mammalia <- read.delim("Data/Dec 2020/Raw/Mammals/occurrence.txt", quote = "")
 reptilia <- read.delim("Data/Dec 2020/Raw/Reptiles/occurrence.txt", quote = "")
@@ -104,12 +102,35 @@ aves <- read.delim("Data/Dec 2020/Raw/Aves/occurrence.txt", quote = "")
 fish <- read.delim("Data/Dec 2020/Raw/Fish/occurrence.txt", quote = "")
 inverts <- read.delim("Data/Dec 2020/Raw/Inverts/occurrence.txt", quote = "")
 
+# There are just over 300,000 bird observations, which we'll split into 4 files for easy upload.
+aves1 <- slice(aves, 1:100000)
+aves2 <- slice(aves, 100001:200000)
+aves3 <- slice(aves, 200001:300000)
+aves4 <- slice(aves, 300001:400000)
+
+# Split fish in half
+fish1 <- slice(fish, 1:100000)
+fish2 <- slice(fish, 100001:200000)
+```
+
+
+
+## Save the remaining .csv files
+For the other groups, we just want to save everything to the correct folder. Don't forget to change the date in the second half of the code for each group.
+
+```{r}
+
+
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATES FOR EACH GROUP__**
 write.csv (amphibia, file = "Data/Dec 2020/Clean Data/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
 write.csv (mammalia, file = "Data/Dec 2020/Clean Data/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
 write.csv (reptilia, file = "Data/Dec 2020/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves, file = "Data/Dec 2020/Clean Data/GBIF_aves_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (fish, file = "Data/Dec 2020/Clean Data/GBIF_fish_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves1, file = "Data/Dec 2020/Clean Data/GBIF_aves1_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves2, file = "Data/Dec 2020/Clean Data/GBIF_aves2_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves3, file = "Data/Dec 2020/Clean Data/GBIF_aves3_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves4, file = "Data/Dec 2020/Clean Data/GBIF_aves4_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish1, file = "Data/Dec 2020/Clean Data/GBIF_fish1_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish2, file = "Data/Dec 2020/Clean Data/GBIF_fish2_clean_Dec 2020.csv", na="", row.names=FALSE)
 write.csv (inverts, file = "Data/Dec 2020/Clean Data/GBIF_inverts_clean_Dec 2020.csv", na="", row.names=FALSE)
 
 ```
@@ -117,5 +138,4 @@ write.csv (inverts, file = "Data/Dec 2020/Clean Data/GBIF_inverts_clean_Dec 2020
 
 Voila! You did it!
 
-
-The "aves" file is probably HUGE, so you should save is as a .zip folder before uploading it. 
+You'll need to compress any files over 100 kb (just make them a zip folder) before uploading to Cal-IBIS.
