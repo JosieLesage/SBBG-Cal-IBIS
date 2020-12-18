@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
 # Setup packages
 library(rgbif)
 library(tidyverse)
+library(stringr)
 ```
 
 
@@ -43,7 +44,7 @@ arthro_clean2 <- anti_join(arthro_clean1, inCode, by = "collectionCode")
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (arthro_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (arthro_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 ### Fungi
@@ -64,7 +65,7 @@ fungi_clean2 <- anti_join(fungi_clean1, inCode, by = "collectionCode")
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (fungi_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fungi_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 ### Plants
@@ -72,7 +73,7 @@ write.csv (fungi_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_fungi_c
 ```{r removing duplicates from Plants}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-plant_raw <- read.delim("Data/Dec 2020/GBIF/Raw/Plants/occurrence.txt")
+plant_raw <- read_tsv("Data/Dec 2020/GBIF/Raw/Plants/occurrence.txt", col_types = cols(.default = "c"))
 
 # This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
 inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
@@ -80,12 +81,29 @@ inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
          collectionCode = CollectionCode)
 
 # These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+
+## --------------- !!!! THIS IS THE ORIGINAL WAY !!!!
 plant_clean1 <- anti_join(plant_raw, inCode, by = "institutionCode")
 plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
 
+## --------------- !!!! THIS WAY COMPARES THE CCH2 AND SEINET DATA DIRECTLY !!!!
+
+cch2_clean <- read_csv("Data/Dec 2020/CCH2/CCH_Clean.csv", col_types = cols(.default = "c")) %>%
+  mutate(identifier = occurrenceID)
+seinet_clean <- read_csv("Data/Dec 2020/SEINet/SEINet_Clean.csv", col_types = cols(.default = "c")) %>%
+  mutate(identifier = occurrenceID)
+
+plant_process1 <- anti_join(plant_raw, cch2_clean, by = "identifier")
+plant_process2 <- anti_join(plant_process1, cch2_clean, by = "occurrenceID")
+plant_process3 <- anti_join(plant_process2, cch2_clean, by = "institutionCode")
+plant_process4 <- anti_join(plant_process3, seinet_clean, by = "occurrenceID")
+plant_process5 <- anti_join(plant_process4, seinet_clean, by = "identifier")
+plant_process6 <- anti_join(plant_process5, seinet_clean, by = "institutionCode") %>%
+  filter(!str_detect(issue, "DIFFERENT_OWNER_INSTITUTION"))
+
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (plant_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_plants_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (plant_process6, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_plants_clean_Dec 2020.csv", na="", row.names=FALSE)
 ```
 
 
@@ -122,16 +140,16 @@ For the other groups, we just want to save everything to the correct folder. Don
 
 
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATES FOR EACH GROUP__**
-write.csv (amphibia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (mammalia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (reptilia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves1, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_aves1_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_aves2_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves3, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_aves3_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (aves4, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_aves4_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (fish1, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_fish1_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (fish2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_fish2_clean_Dec 2020.csv", na="", row.names=FALSE)
-write.csv (inverts, file = "Data/Dec 2020/GBIF/Clean Data/GBIF/GBIF_inverts_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (amphibia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_amphibia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (mammalia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_mammalia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (reptilia, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_reptilia_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves1, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_aves1_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_aves2_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves3, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_aves3_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (aves4, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_aves4_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish1, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fish1_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fish2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fish2_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (inverts, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_inverts_clean_Dec 2020.csv", na="", row.names=FALSE)
 
 ```
 

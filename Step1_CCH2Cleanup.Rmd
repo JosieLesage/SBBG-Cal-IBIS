@@ -368,7 +368,8 @@ Now that we have both a CCH2 term and a CCH2 WKT dataset, we need to remove as m
 ```{r dupe clear}
 cch2_all <- full_join(cch2_terms, cch2_wkts)
 cch2_all_dist <- distinct(cch2_all, id, .keep_all = TRUE)
+cch2_all_dist_2 <- distinct(cch2_all_dist, occurrenceID, .keep_all = TRUE)
 
-write.csv(cch2_all_dist, file = "Data/Dec 2020/CCH2/CCH_Clean.csv", na="", row.names=FALSE)
+write.csv(cch2_all_dist_2, file = "Data/Dec 2020/CCH2/CCH_Clean.csv", na="", row.names=FALSE)
 ```
 
