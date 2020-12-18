@@ -1,5 +1,5 @@
 ---
-title: "Step4_SEINetCleanup"
+title: "Step5_SCANBugsCleanup"
 author: "Josie Lesage"
 date: "12/17/2020"
 output: html_document
@@ -9,14 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
 
 # Setup packages
-library(rgbif)
 library(tidyverse)
 ```
 
-# SEINet Data
+# SCAN-Bugs Data
 
 ## Cleaning data and removing potential duplicates
-The code below should be run after you have downloaded datasets for each of the islands, and the special terms searches, in both the CCH2 and SEINet databases.
+The code below should be run after you have downloaded datasets for each of the islands, and the special terms searches, in the SCAN-Bugs database.
 
 ****
 To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
@@ -25,3 +24,6 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 
 # Term Data
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
+
+
+
