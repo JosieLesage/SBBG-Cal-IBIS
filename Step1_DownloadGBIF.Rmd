@@ -26,7 +26,7 @@ Then, within that folder, **create a "Raw" folder and "Clean Data" folder** -- t
 Finally, hit ctrl+F within here, and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
 
 # Gathering GBIF Data
-To begin, we'll gather the data we're interested in from GBIF. We'll download several separate datasets - these will end up as .zip folders in the "Data/Month YY" folder we created, and will need to be unzipped later.
+To begin, we'll gather the data we're interested in from GBIF. We'll download several separate datasets - these will end up as .zip folders in the "Data/GBIF/Month YY" folder we created, and will need to be unzipped later.
 
 Run the first chunk below. The download will take a while. Be patient -- give it ~20 minutes before coming back and moving on to the next chunk. Josie suggests making a cup of nice tea and enjoying it while tidying your inbox.
 
@@ -281,31 +281,31 @@ Downloading the .zip files by running the code below will also take a small chun
 ```{r}
 occ_download_get("0132501-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132502-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132503-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132504-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132505-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132506-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132507-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132547-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 occ_download_get("0132550-200613084148143",
                  overwrite = TRUE,
-                 path = "Data/Dec 2020/Raw")
+                 path = "Data/Dec 2020/GBIF/Raw")
 ```
 
 
