@@ -82,11 +82,11 @@ inCode <- read.csv ("NA_inCodes_updated2020.csv") %>%
 
 # These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
 
-## --------------- !!!! THIS IS THE ORIGINAL WAY !!!!
-plant_clean1 <- anti_join(plant_raw, inCode, by = "institutionCode")
-plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
+## --------------- This is the original method - anti-join by codes already pulled out. 
+# plant_clean1 <- anti_join(plant_raw, inCode, by = "institutionCode")
+# plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
 
-## --------------- !!!! THIS WAY COMPARES THE CCH2 AND SEINET DATA DIRECTLY !!!!
+## --------------- !!!! This is the new way that compares datasets directly, leaves more GBIF in !!!!
 
 cch2_clean <- read_csv("Data/Dec 2020/CCH2/CCH_Clean.csv", col_types = cols(.default = "c")) %>%
   mutate(identifier = occurrenceID)
