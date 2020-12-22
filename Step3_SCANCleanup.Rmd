@@ -27,3 +27,5 @@ To clean and generate a single data file, we must begin by extracting each zip f
 
 
 
+# Spatial/WKT data
+
