@@ -314,7 +314,7 @@ cch2_terms <- full_join(cch2_terms, Todos_Santos_Island)
 
 Voila, "cch2_terms" is a huge dataset and has everyone (but probably some dupes). 
 
-# Importing WKT data
+# Spatial/WKT data
 
 There are fewer WKT datasets, but we need to extact and glue them too. 
 ```{r unzip WKTs}
