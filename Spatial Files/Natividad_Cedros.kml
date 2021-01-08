@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Natividad_Cedros.kml</name>
+	<Style id="PolyStyle008">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffc4f2c5</color>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>Natividad, Cedros</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Natividad, Cedros</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>Natividad, Cedros</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>206518.19536</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#PolyStyle008</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-115.0583283442552,27.86991310947238,0 -115.0793953162635,27.92246499123083,0 -115.127314150608,27.95534301150242,0 -115.1025135184966,27.97679769193728,0 -115.084851716623,28.00759521347152,0 -115.0795666293462,28.07866283651505,0 -115.0558179922113,28.12968519287454,0 -115.0543114541645,28.18661615470552,0 -115.0667268176469,28.22912709843238,0 -115.0614528947041,28.26726619685397,0 -115.0749356094351,28.32868389520119,0 -115.1025736135897,28.4002899941308,0 -115.1379098397817,28.43875100818034,0 -115.1903567174397,28.46353813934957,0 -115.2446996868383,28.46291184162544,0 -115.2955898126131,28.43859311555635,0 -115.3382723175576,28.38998975420225,0 -115.3649042203435,28.30034521541968,0 -115.3526478111219,28.24111882546675,0 -115.3866591306746,28.20098884644383,0 -115.4205762590626,28.18197636966735,0 -115.4434077256033,28.15471278336889,0 -115.459302572837,28.08893255045331,0 -115.4560656861363,28.05465330128369,0 -115.4390820163494,28.02442886723471,0 -115.4129645686373,28.00179891557318,0 -115.3764147640866,27.98600589679204,0 -115.3368321875441,27.98320045274743,0 -115.2985859607406,27.95464075499351,0 -115.3234275209757,27.91202029212339,0 -115.3201765844748,27.86417617925811,0 -115.3003988413479,27.83368441198648,0 -115.2280859048759,27.77012583670585,0 -115.1605591415771,27.75867078226731,0 -115.1078074974812,27.77342435360445,0 -115.0829346643929,27.79393772989247,0 -115.0671687477574,27.81998775889872,0 -115.090260638744,27.8419939821169,0 -115.0912869630817,27.85143358462123,0 -115.0583283442552,27.86991310947238,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

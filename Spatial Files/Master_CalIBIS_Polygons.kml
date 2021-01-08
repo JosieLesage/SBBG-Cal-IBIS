@@ -1,0 +1,2196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="CalIBIS_Islands_Buff_MainClip_Final" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd http://www.google.com/kml/ext/2.2 http://code.google.com/apis/kml/schema/kml22gx.xsd">
+	<name>CalIBIS_Islands_Buff_MainClip_Final</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="PolyStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffd7f2b8</color>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>CalIBIS_Islands_Buff_MainClip_Final</name>
+		<Snippet maxLines="0"></Snippet>
+		<Placemark id="ID_00000">
+			<name>San Benito</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Benito</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>San Benito</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-115.5719323285753,28.40470831943017,0 -115.6290198884816,28.40197128255526,0 -115.6737856728532,28.37808847440149,0 -115.7009009019621,28.33427695803161,0 -115.704828162233,28.28177445254206,0 -115.6852076388613,28.24485664143591,0 -115.6488664238126,28.21865072786307,0 -115.6038362735319,28.20683776754659,0 -115.5220366688243,28.20305608655026,0 -115.4821629916362,28.21928389433675,0 -115.4522633314269,28.24952062615704,0 -115.4365797171743,28.28518436461458,0 -115.4371478569205,28.3242158799912,0 -115.453797849936,28.35735812016393,0 -115.4909328459326,28.39057688991551,0 -115.5286044017073,28.40437049421597,0 -115.5719323285753,28.40470831943017,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00001">
+			<name>Natividad, Cedros</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Natividad, Cedros</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Natividad, Cedros</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-115.0583283442552,27.86991310947238,0 -115.0793953162635,27.92246499123083,0 -115.127314150608,27.95534301150242,0 -115.1025135184966,27.97679769193728,0 -115.084851716623,28.00759521347152,0 -115.0795666293462,28.07866283651505,0 -115.0558179922113,28.12968519287454,0 -115.0543114541645,28.18661615470552,0 -115.0667268176469,28.22912709843238,0 -115.0614528947041,28.26726619685397,0 -115.0749356094351,28.32868389520119,0 -115.1025736135897,28.4002899941308,0 -115.1379098397817,28.43875100818034,0 -115.1903567174397,28.46353813934957,0 -115.2446996868383,28.46291184162544,0 -115.2955898126131,28.43859311555635,0 -115.3382723175576,28.38998975420225,0 -115.3649042203435,28.30034521541968,0 -115.3526478111219,28.24111882546675,0 -115.3866591306746,28.20098884644383,0 -115.4205762590626,28.18197636966735,0 -115.4434077256033,28.15471278336889,0 -115.459302572837,28.08893255045331,0 -115.4560656861363,28.05465330128369,0 -115.4390820163494,28.02442886723471,0 -115.4129645686373,28.00179891557318,0 -115.3764147640866,27.98600589679204,0 -115.3368321875441,27.98320045274743,0 -115.2985859607406,27.95464075499351,0 -115.3234275209757,27.91202029212339,0 -115.3201765844748,27.86417617925811,0 -115.3003988413479,27.83368441198648,0 -115.2280859048759,27.77012583670585,0 -115.1605591415771,27.75867078226731,0 -115.1078074974812,27.77342435360445,0 -115.0829346643929,27.79393772989247,0 -115.0671687477574,27.81998775889872,0 -115.090260638744,27.8419939821169,0 -115.0912869630817,27.85143358462123,0 -115.0583283442552,27.86991310947238,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00002">
+			<name>Guadalupe</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Guadalupe</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Guadalupe</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>3</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-118.2652489912414,29.28009845184652,0 -118.3953808745642,29.24376501703901,0 -118.4507676066904,29.19829490400633,0 -118.4692305018219,29.15013188733506,0 -118.4617130780869,29.1125516934405,0 -118.4649057237835,29.05630441074498,0 -118.4482909447365,29.02267496616292,0 -118.4154783607371,28.99437053616852,0 -118.4148526192445,28.96389971364891,0 -118.3963460924333,28.90509210548807,0 -118.4002146503283,28.86075924303605,0 -118.3927192020391,28.83093091016818,0 -118.3522443785507,28.778553609397,0 -118.3213914134392,28.76313307005064,0 -118.2885767683927,28.75722407331405,0 -118.2375986743601,28.76608238057779,0 -118.1979886057328,28.7949009776554,0 -118.1340675042354,28.88709586774621,0 -118.1196023238843,28.95957470839141,0 -118.1277781093413,29.07842998237041,0 -118.1688675815095,29.14455678079201,0 -118.1588189175778,29.18582273817934,0 -118.1663434564488,29.22227002774656,0 -118.2055717489958,29.26473573920817,0 -118.2652489912414,29.28009845184652,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00003">
+			<name>Geronimo</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Geronimo</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Geronimo</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>4</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-115.695021307069,29.83408858191076,0 -115.7216005684632,29.86375890092216,0 -115.7583743101643,29.88148770185625,0 -115.8019982174721,29.88544074178057,0 -115.8439719823865,29.8736272289133,0 -115.8748346202905,29.8498498031582,0 -115.894503822422,29.81473954080606,0 -115.9001838590013,29.77522890074061,0 -115.8865308943704,29.73757489973009,0 -115.8601228695818,29.71137292228703,0 -115.823875131965,29.69576803135095,0 -115.7824772142603,29.69346040246492,0 -115.7443295582584,29.70485072887293,0 -115.699791674046,29.74333621384016,0 -115.7086854927604,29.75500251344216,0 -115.695021307069,29.83408858191076,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00004">
+			<name>San Martin</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Martin</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>San Martin</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>5</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-116.0428644139623,30.56600668625491,0 -116.081475185757,30.58332554652168,0 -116.1249928611917,30.58696622921002,0 -116.1663522155459,30.57558290117657,0 -116.2019260644723,30.5508151512947,0 -116.2230780171868,30.51770511711947,0 -116.2279591508428,30.48100392672809,0 -116.2159740009493,30.44393175664966,0 -116.1889022107288,30.41458953564897,0 -116.1461836509097,30.39541715538133,0 -116.1026784689273,30.39028470408204,0 -116.0575425735748,30.40137392645928,0 -116.0246226233003,30.42248513933073,0 -116.0403757660812,30.43248987590729,0 -116.057842541658,30.47147333062333,0 -116.0428644139623,30.56600668625491,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00005">
+			<name>Todos Santos</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Todos Santos</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Todos Santos</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>6</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-116.6950300943471,31.74278724711881,0 -116.6803886845851,31.77861179578828,0 -116.6836350040102,31.82194951998499,0 -116.6986653942171,31.85520457882038,0 -116.7261799917091,31.88040673921957,0 -116.7745319719439,31.90005157148856,0 -116.8172184414262,31.90316608261914,0 -116.8604442890251,31.89136686813827,0 -116.8939647232772,31.86571943405558,0 -116.9139729720196,31.82796960493974,0 -116.9128208116252,31.78715704175713,0 -116.8942455330309,31.75461460906816,0 -116.8501066648625,31.71761883655214,0 -116.80871629971,31.70172030842222,0 -116.7652616587524,31.70112373776711,0 -116.7262658659449,31.71487999119885,0 -116.7530758483519,31.74072651189405,0 -116.7474753774911,31.75678968924271,0 -116.7244683252521,31.75769481785515,0 -116.6950300943471,31.74278724711881,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00006">
+			<name>Coronados</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Coronados</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Coronados</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>7</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-117.2363154996695,32.30012368673197,0 -117.1833669130685,32.31396149565865,0 -117.1463708891139,32.34764357501642,0 -117.133161288948,32.39426823800569,0 -117.1440998537567,32.44618549211936,0 -117.1813717240115,32.48923739996384,0 -117.2505347961549,32.52636979467438,0 -117.2932314826114,32.5363015053938,0 -117.3366516024415,32.5308464356313,0 -117.3732275800185,32.51159122594869,0 -117.3976418270459,32.48236409310516,0 -117.4070667801904,32.44770779714327,0 -117.3999980423712,32.40902725218484,0 -117.3774269059069,32.37602943213912,0 -117.3376188886986,32.35086251472167,0 -117.3077304196454,32.31980829150372,0 -117.2749817800649,32.30495719049917,0 -117.2363154996695,32.30012368673197,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00007">
+			<name>San Clemente</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Clemente</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>San Clemente</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>8</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-118.342527426517,32.72610437301348,0 -118.2906096438276,32.74365012624785,0 -118.251747173505,32.78282205329149,0 -118.2425724046049,32.82953435742484,0 -118.2625166506591,32.87353820530081,0 -118.4162901987725,32.99373022624369,0 -118.4771296581214,33.07737077705406,0 -118.5153416125743,33.10831379468439,0 -118.5495997650514,33.12109301865846,0 -118.597694103991,33.12575255475594,0 -118.6697558589502,33.10498578258982,0 -118.6939419576534,33.08440059937221,0 -118.7089174623871,33.05900892649429,0 -118.7107974733549,32.99492050254578,0 -118.5873002323834,32.79940250453858,0 -118.4923776729485,32.7299458864547,0 -118.4619271564471,32.71563369182205,0 -118.4142907671203,32.71074257701978,0 -118.342527426517,32.72610437301348,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00008">
+			<name>San Nicolas</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Nicolas</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>San Nicolas</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>9</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-119.5365540575091,33.37552298407192,0 -119.6197394538342,33.36165187180677,0 -119.6666029023151,33.33004835250495,0 -119.6860169510472,33.27999868196963,0 -119.668783963859,33.21682086086043,0 -119.6456237056826,33.18760637344391,0 -119.6092589388576,33.15986782677855,0 -119.5320786658765,33.13327220848915,0 -119.4631184304187,33.12477032881392,0 -119.3888953625256,33.1400366153114,0 -119.3561325214893,33.16236661770084,0 -119.3311179982548,33.19907490463933,0 -119.3266333042639,33.23525310630345,0 -119.3395286228742,33.2729677048921,0 -119.3631035129682,33.30328607928398,0 -119.4094768527087,33.33608667127475,0 -119.4911035303976,33.36954039406605,0 -119.5365540575091,33.37552298407192,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00009">
+			<name>Santa Catalina</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Santa Catalina</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Santa Catalina</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>10</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-118.6099312181889,33.56911621125969,0 -118.6537707375168,33.55977224984256,0 -118.6900135469389,33.53539820898674,0 -118.710529471342,33.50094556622926,0 -118.7121048914607,33.46205744793319,0 -118.6951950297097,33.42613509434528,0 -118.6559929805266,33.38152897198803,0 -118.5957589721749,33.34804770069926,0 -118.577090751344,33.30202693773526,0 -118.542324983799,33.26306253135264,0 -118.4884175734055,33.23591438554761,0 -118.4005385596898,33.22859289018098,0 -118.3335845128059,33.20902642265389,0 -118.2773796223171,33.2173991290411,0 -118.2306474813882,33.24352293678379,0 -118.2013389990196,33.28520152010963,0 -118.1987330129728,33.3398776234917,0 -118.2182852810879,33.38235307993489,0 -118.2616358001138,33.42692632825624,0 -118.2891476162416,33.46916591023497,0 -118.3394788296396,33.49760998980211,0 -118.4559422198594,33.53668536135104,0 -118.5007343967104,33.56201505739265,0 -118.6099312181889,33.56911621125969,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00010">
+			<name>Santa Barbara</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Santa Barbara</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>Santa Barbara</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>11</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-119.0317033646684,33.37499048610148,0 -118.9885609207208,33.38373367227485,0 -118.9539259156976,33.40447136178859,0 -118.9311941560565,33.43464630540917,0 -118.9199448436737,33.47530566453207,0 -118.9253379885529,33.51511665030316,0 -118.947360519528,33.54799565842482,0 -118.9827697100813,33.57024757332392,0 -119.0276665393371,33.57917182834868,0 -119.0843458377424,33.56875187253981,0 -119.1187776495094,33.55165827897533,0 -119.1456870469299,33.52114313757514,0 -119.1556279055608,33.48390755049617,0 -119.143413960098,33.43838287755732,0 -119.1177253410199,33.40431792049349,0 -119.0770551352236,33.38149491658201,0 -119.0317033646684,33.37499048610148,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+		<Placemark id="ID_00011">
+			<name>San Miguel, Santa Rosa, Santa Cruz</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Miguel, Santa Rosa, Santa Cruz</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>Island_Names</td>
+
+<td>San Miguel, Santa Rosa, Santa Cruz</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-120.2359293845594,34.10012231808269,0 -120.3246710647007,34.15892072960969,0 -120.3637108364206,34.16641842763052,0 -120.4042822656241,34.1615712755386,0 -120.4738746832403,34.13130505462341,0 -120.5332233911482,34.09411335119355,0 -120.5564533684723,34.0521703516,0 -120.5541370235145,34.00860889219739,0 -120.5284003369528,33.97118782674516,0 -120.4882975396518,33.94770509649327,0 -120.373441038239,33.92474705496837,0 -120.3167133836435,33.92867570595295,0 -120.2983019467934,33.91733482855913,0 -120.2477979073539,33.85402516562085,0 -120.1710654612256,33.8149410213022,0 -120.1320518823996,33.80480120907383,0 -120.0867766321396,33.80718392271233,0 -120.0111780363974,33.83045018419608,0 -119.9701368518578,33.85163544076079,0 -119.9197952199719,33.86162084666432,0 -119.8867111049301,33.88302982698026,0 -119.8281065490858,33.86993481372149,0 -119.712755441266,33.86949488451485,0 -119.6279118650261,33.89707098133848,0 -119.5277931733955,33.90979115648885,0 -119.4850559884721,33.92902856362425,0 -119.4360773384173,33.91570470780947,0 -119.3634099614453,33.91543063086465,0 -119.2836270147215,33.94971374009744,0 -119.2612554796839,33.97462957864756,0 -119.2501087997334,34.00527926651953,0 -119.2609346674913,34.05659681889609,0 -119.304183916176,34.09442145098154,0 -119.3538053623604,34.10719514850076,0 -119.452710713923,34.10496038969846,0 -119.513655368661,34.13607817135512,0 -119.5505055981113,34.14534915958838,0 -119.6119999813613,34.14055305323818,0 -119.658354545213,34.12155485918073,0 -119.7369722383551,34.14733351621036,0 -119.7947358460753,34.14769243817997,0 -119.8380645036051,34.1601706977282,0 -119.9266325766884,34.16745431122644,0 -119.976524255167,34.15372554676831,0 -120.0130146903041,34.12242333829691,0 -120.0702101684028,34.1270716965001,0 -120.1137149379385,34.11443272557928,0 -120.1553533935454,34.11518512054826,0 -120.2077131424927,34.09955468906299,0 -120.2359293845594,34.10012231808269,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

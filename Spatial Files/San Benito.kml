@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>San Benito.kml</name>
+	<Style id="PolyStyle000">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffc0ebfa</color>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>San Benito</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Benito</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>San Benito</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>78621.787178</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>1</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#PolyStyle000</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-115.5719323285753,28.40470831943017,0 -115.6290198884816,28.40197128255526,0 -115.6737856728532,28.37808847440149,0 -115.7009009019621,28.33427695803161,0 -115.704828162233,28.28177445254206,0 -115.6852076388613,28.24485664143591,0 -115.6488664238126,28.21865072786307,0 -115.6038362735319,28.20683776754659,0 -115.5220366688243,28.20305608655026,0 -115.4821629916362,28.21928389433675,0 -115.4522633314269,28.24952062615704,0 -115.4365797171743,28.28518436461458,0 -115.4371478569205,28.3242158799912,0 -115.453797849936,28.35735812016393,0 -115.4909328459326,28.39057688991551,0 -115.5286044017073,28.40437049421597,0 -115.5719323285753,28.40470831943017,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

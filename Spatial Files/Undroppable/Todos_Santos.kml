@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="Todos_Santos" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd http://www.google.com/kml/ext/2.2 http://code.google.com/apis/kml/schema/kml22gx.xsd">
+	<name>Todos_Santos</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="PolyStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffcbf2e1</color>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>Todos_Santos</name>
+		<Snippet maxLines="0"></Snippet>
+		<Placemark id="ID_00000">
+			<name>Todos Santos</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Todos Santos</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>Todos Santos</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>76963.696342</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>6</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-116.6950300943471,31.74278724711881,0 -116.6803886845851,31.77861179578828,0 -116.6836350040102,31.82194951998499,0 -116.6986653942171,31.85520457882038,0 -116.7261799917091,31.88040673921957,0 -116.7745319719439,31.90005157148856,0 -116.8172184414262,31.90316608261914,0 -116.8604442890251,31.89136686813827,0 -116.8939647232772,31.86571943405558,0 -116.9139729720196,31.82796960493974,0 -116.9128208116252,31.78715704175713,0 -116.8942455330309,31.75461460906816,0 -116.8501066648625,31.71761883655214,0 -116.80871629971,31.70172030842222,0 -116.7652616587524,31.70112373776711,0 -116.7262658659449,31.71487999119885,0 -116.7530758483519,31.74072651189405,0 -116.7474753774911,31.75678968924271,0 -116.7244683252521,31.75769481785515,0 -116.6950300943471,31.74278724711881,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="Guadalupe" xsi:schemaLocation="http://www.opengis.net/kml/2.2 http://schemas.opengis.net/kml/2.2.0/ogckml22.xsd http://www.google.com/kml/ext/2.2 http://code.google.com/apis/kml/schema/kml22gx.xsd">
+	<name>Guadalupe</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="PolyStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffbdf2df</color>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>Guadalupe</name>
+		<Snippet maxLines="0"></Snippet>
+		<Placemark id="ID_00000">
+			<name>Guadalupe</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Guadalupe</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>Guadalupe</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>150126.834205</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>3</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#PolyStyle00</styleUrl>
+			<MultiGeometry>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-118.2652489912414,29.28009845184652,0 -118.3953808745642,29.24376501703901,0 -118.4507676066904,29.19829490400633,0 -118.4692305018219,29.15013188733506,0 -118.4617130780869,29.1125516934405,0 -118.4649057237835,29.05630441074498,0 -118.4482909447365,29.02267496616292,0 -118.4154783607371,28.99437053616852,0 -118.4148526192445,28.96389971364891,0 -118.3963460924333,28.90509210548807,0 -118.4002146503283,28.86075924303605,0 -118.3927192020391,28.83093091016818,0 -118.3522443785507,28.778553609397,0 -118.3213914134392,28.76313307005064,0 -118.2885767683927,28.75722407331405,0 -118.2375986743601,28.76608238057779,0 -118.1979886057328,28.7949009776554,0 -118.1340675042354,28.88709586774621,0 -118.1196023238843,28.95957470839141,0 -118.1277781093413,29.07842998237041,0 -118.1688675815095,29.14455678079201,0 -118.1588189175778,29.18582273817934,0 -118.1663434564488,29.22227002774656,0 -118.2055717489958,29.26473573920817,0 -118.2652489912414,29.28009845184652,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

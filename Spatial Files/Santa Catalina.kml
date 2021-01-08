@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Santa Catalina.kml</name>
+	<Style id="PolyStyle001">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffbbf2db</color>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>Santa Catalina</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>Santa Catalina</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>Santa Catalina</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>136968.064473</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>10</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#PolyStyle001</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-118.6099312181889,33.56911621125969,0 -118.6537707375168,33.55977224984256,0 -118.6900135469389,33.53539820898674,0 -118.710529471342,33.50094556622926,0 -118.7121048914607,33.46205744793319,0 -118.6951950297097,33.42613509434528,0 -118.6559929805266,33.38152897198803,0 -118.5957589721749,33.34804770069926,0 -118.577090751344,33.30202693773526,0 -118.542324983799,33.26306253135264,0 -118.4884175734055,33.23591438554761,0 -118.4005385596898,33.22859289018098,0 -118.3335845128059,33.20902642265389,0 -118.2773796223171,33.2173991290411,0 -118.2306474813882,33.24352293678379,0 -118.2013389990196,33.28520152010963,0 -118.1987330129728,33.3398776234917,0 -118.2182852810879,33.38235307993489,0 -118.2616358001138,33.42692632825624,0 -118.2891476162416,33.46916591023497,0 -118.3394788296396,33.49760998980211,0 -118.4559422198594,33.53668536135104,0 -118.5007343967104,33.56201505739265,0 -118.6099312181889,33.56911621125969,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

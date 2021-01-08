@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>San Miguel_Santa Rosa_Santa Cruz.kml</name>
+	<Style id="PolyStyle007">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff6e6e6e</color>
+			<width>0.4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>ffcdf7d4</color>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>San Miguel, Santa Rosa, Santa Cruz</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>San Miguel, Santa Rosa, Santa Cruz</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Island_Nam</td>
+
+<td>San Miguel, Santa Rosa, Santa Cruz</td>
+
+</tr>
+
+<tr>
+
+<td>Shape_Leng</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0_PCODE</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0_REF</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>ADM0ALT1ES</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ADM0ALT2ES</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>date</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>validOn</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr>
+
+<td>validTo</td>
+
+<td>12:00:00 AM</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>BUFF_DIST</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>ORIG_FID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Shape_Le_1</td>
+
+<td>282917.9146</td>
+
+</tr>
+
+<tr>
+
+<td>InPoly_FID</td>
+
+<td>12</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SimPgnFlag</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MaxSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>MinSimpTol</td>
+
+<td>500</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#PolyStyle007</styleUrl>
+		<MultiGeometry>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-120.2359293845594,34.10012231808269,0 -120.3246710647007,34.15892072960969,0 -120.3637108364206,34.16641842763052,0 -120.4042822656241,34.1615712755386,0 -120.4738746832403,34.13130505462341,0 -120.5332233911482,34.09411335119355,0 -120.5564533684723,34.0521703516,0 -120.5541370235145,34.00860889219739,0 -120.5284003369528,33.97118782674516,0 -120.4882975396518,33.94770509649327,0 -120.373441038239,33.92474705496837,0 -120.3167133836435,33.92867570595295,0 -120.2983019467934,33.91733482855913,0 -120.2477979073539,33.85402516562085,0 -120.1710654612256,33.8149410213022,0 -120.1320518823996,33.80480120907383,0 -120.0867766321396,33.80718392271233,0 -120.0111780363974,33.83045018419608,0 -119.9701368518578,33.85163544076079,0 -119.9197952199719,33.86162084666432,0 -119.8867111049301,33.88302982698026,0 -119.8281065490858,33.86993481372149,0 -119.712755441266,33.86949488451485,0 -119.6279118650261,33.89707098133848,0 -119.5277931733955,33.90979115648885,0 -119.4850559884721,33.92902856362425,0 -119.4360773384173,33.91570470780947,0 -119.3634099614453,33.91543063086465,0 -119.2836270147215,33.94971374009744,0 -119.2612554796839,33.97462957864756,0 -119.2501087997334,34.00527926651953,0 -119.2609346674913,34.05659681889609,0 -119.304183916176,34.09442145098154,0 -119.3538053623604,34.10719514850076,0 -119.452710713923,34.10496038969846,0 -119.513655368661,34.13607817135512,0 -119.5505055981113,34.14534915958838,0 -119.6119999813613,34.14055305323818,0 -119.658354545213,34.12155485918073,0 -119.7369722383551,34.14733351621036,0 -119.7947358460753,34.14769243817997,0 -119.8380645036051,34.1601706977282,0 -119.9266325766884,34.16745431122644,0 -119.976524255167,34.15372554676831,0 -120.0130146903041,34.12242333829691,0 -120.0702101684028,34.1270716965001,0 -120.1137149379385,34.11443272557928,0 -120.1553533935454,34.11518512054826,0 -120.2077131424927,34.09955468906299,0 -120.2359293845594,34.10012231808269,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>
