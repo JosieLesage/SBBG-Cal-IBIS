@@ -35,7 +35,7 @@ unzip("Data/Dec 2020/CCH2/Terms/Anacapa Island.zip", exdir = "Data/Dec 2020/CCH2
 unzip("Data/Dec 2020/CCH2/Terms/Barbara Isl.zip", exdir = "Data/Dec 2020/CCH2/Terms/Barbara Isl")
 unzip("Data/Dec 2020/CCH2/Terms/Barbara Island.zip", exdir = "Data/Dec 2020/CCH2/Terms/Barbara Island")
 
-unzip("Data/Dec 2020/CCH2/Terms/Benito Is.zip", exdir = "Data/Dec 2020/CCH2/Terms/Benito Isl")
+unzip("Data/Dec 2020/CCH2/Terms/Benito Isl.zip", exdir = "Data/Dec 2020/CCH2/Terms/Benito Isl")
 unzip("Data/Dec 2020/CCH2/Terms/Benito Islan.zip", exdir = "Data/Dec 2020/CCH2/Terms/Benito Islan")
 unzip("Data/Dec 2020/CCH2/Terms/Benito Island.zip", exdir = "Data/Dec 2020/CCH2/Terms/Benito Island")
 
