@@ -1,0 +1,17 @@
+---
+title: "Step4_EcdysisCleanup"
+author: "Josie Lesage"
+date: "1/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+
+# Setup packages
+library(tidyverse)
+```
+
+# Ecdysis Arthropod Data
+
+To be added.
