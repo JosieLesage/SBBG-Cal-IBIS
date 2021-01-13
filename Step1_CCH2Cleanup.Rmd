@@ -26,9 +26,9 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 # Term Data
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
 ```{r CCH2 unzip}
-zipfiles <- list.files("Data/Dec 2020/CCH2/Terms", pattern = "*.zip")
+cchterm_zipfiles <- list.files("Data/Dec 2020/CCH2/Terms", pattern = "*.zip")
 
-walk(zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/Terms/", .x),
+walk(cchterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/Terms/", .x),
                        exdir = str_c("Data/Dec 2020/CCH2/Terms/Unzipped/", .x),
                        overwrite = TRUE))
 ```
@@ -37,26 +37,26 @@ Now, we extract the occurrence data for each file, and glue all of the data toge
 
 
 ```{r extract csvs and glue}
-occpath <- "Data/Dec 2020/CCH2/Terms/Unzipped/"
-occdirs <- list.files(occpath)
+cch2term_occpath <- "Data/Dec 2020/CCH2/Terms/Unzipped/"
+cch2term_occdirs <- list.files(occpath)
 
 cch2_terms <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
 
-for(dir in occdirs) {
-  sub_folders = list.files(paste(occpath,dir,sep = ""))
+for(dir in cch2term_occdirs) {
+  sub_folders = list.files(paste(cch2term_occpath,dir,sep = ""))
   if (any(sub_folders %in% "occurrences.csv")) {
     ## there is occurrences.csv in this directory read it in and append to a data.frame.
     ## read in data 
-    temp_data = read_csv(file = paste(occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    temp_data = read_csv(file = paste(cch2term_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
     ## append
     cch2_terms = rbind(cch2_terms,temp_data);
   } else {
     ## try go one more directory deeper
     for(sub_dir in sub_folders) {
-      sub_sub_files = list.files(paste(occpath,dir,"/",sub_dir,sep = ""))             
+      sub_sub_files = list.files(paste(cch2term_occpath,dir,"/",sub_dir,sep = ""))             
       if (any(sub_sub_files %in% "occurrences.csv")) {
         ## found occurrences.csv read it in and append it
-        temp_data = read.csv(file = paste(occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        temp_data = read.csv(file = paste(cch2term_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
         cch2_terms = rbind(cch2_terms,temp_data);
       } else {
         warning("could not find the file 'occurrences.csv' two directories deep")
