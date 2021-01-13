@@ -38,7 +38,7 @@ Now, we extract the occurrence data for each file, and glue all of the data toge
 
 ```{r extract csvs and glue}
 cch2term_occpath <- "Data/Dec 2020/CCH2/Terms/Unzipped/"
-cch2term_occdirs <- list.files(occpath)
+cch2term_occdirs <- list.files(cch2term_occpath)
 
 cch2_terms <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
 
@@ -74,34 +74,34 @@ Voila, "cch2_terms" is a huge dataset and has everyone (but probably some dupes)
 
 There are fewer WKT datasets, but we need to extact and glue them too. 
 ```{r unzip WKTs}
-zipfiles <- list.files("Data/Dec 2020/CCH2/WKTs", pattern = "*.zip")
+cchwkt_zipfiles <- list.files("Data/Dec 2020/CCH2/WKTs", pattern = "*.zip")
 
-walk(zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/WKTs/", .x),
+walk(cchwkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/WKTs/", .x),
                        exdir = str_c("Data/Dec 2020/CCH2/WKTs/Unzipped/", .x),
                        overwrite = TRUE))
 ```
 
 ```{r import WKTs}
-occpath <- "Data/Dec 2020/CCH2/WKTs/Unzipped/"
-occdirs <- list.files(occpath)
+cchwkt_occpath <- "Data/Dec 2020/CCH2/WKTs/Unzipped/"
+cchwkt_occdirs <- list.files(cchwkt_occpath)
 
 cch2_wkts <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
 
-for(dir in occdirs) {
-  sub_folders = list.files(paste(occpath,dir,sep = ""))
+for(dir in cchwkt_occdirs) {
+  sub_folders = list.files(paste(cchwkt_occpath,dir,sep = ""))
   if (any(sub_folders %in% "occurrences.csv")) {
     ## there is occurrences.csv in this directory read it in and append to a data.frame.
     ## read in data 
-    temp_data = read_csv(file = paste(occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    temp_data = read_csv(file = paste(cchwkt_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
     ## append
     cch2_wkts = rbind(cch2_wkts,temp_data);
   } else {
     ## try go one more directory deeper
     for(sub_dir in sub_folders) {
-      sub_sub_files = list.files(paste(occpath,dir,"/",sub_dir,sep = ""))             
+      sub_sub_files = list.files(paste(cchwkt_occpath,dir,"/",sub_dir,sep = ""))             
       if (any(sub_sub_files %in% "occurrences.csv")) {
         ## found occurrences.csv read it in and append it
-        temp_data = read.csv(file = paste(occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        temp_data = read.csv(file = paste(cchwkt_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
         cch2_wkts = rbind(cch2_wkts,temp_data);
       } else {
         warning("could not find the file 'occurrences.csv' two directories deep")

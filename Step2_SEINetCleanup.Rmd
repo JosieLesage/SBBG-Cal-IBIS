@@ -26,288 +26,85 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
 
 ```{r seinet unzip}
-unzip("Data/Dec 2020/SEINet/Terms/Anacapa Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Anacapa Island")
+seiterm_zipfiles <- list.files("Data/Dec 2020/SEINet/Terms", pattern = "*.zip")
 
-unzip("Data/Dec 2020/SEINet/Terms/Barbara Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Barbara Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Barbara Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Barbara Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Benito Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Benito Is")
-unzip("Data/Dec 2020/SEINet/Terms/Benito Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Benito Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Catalina I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Catalina I")
-unzip("Data/Dec 2020/SEINet/Terms/Catalina Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Catalina Is")
-unzip("Data/Dec 2020/SEINet/Terms/Catalina Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Catalina Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Catalina Islan.zip", exdir = "Data/Dec 2020/SEINet/Terms/Catalina Islan")
-unzip("Data/Dec 2020/SEINet/Terms/Catalina Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Catalina Island")
-
-
-unzip("Data/Dec 2020/SEINet/Terms/Cedros Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Cedros Is")
-unzip("Data/Dec 2020/SEINet/Terms/Cedros Islan.zip", exdir = "Data/Dec 2020/SEINet/Terms/Cedros Islan")
-unzip("Data/Dec 2020/SEINet/Terms/Cedros Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Cedros Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Clement Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Clement Island")
-unzip("Data/Dec 2020/SEINet/Terms/Clemente Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Clemente Is")
-unzip("Data/Dec 2020/SEINet/Terms/Clemente Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Clemente Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Clemente Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Clemente Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Coronado Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Coronado Is")
-unzip("Data/Dec 2020/SEINet/Terms/Coronado Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Coronado Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Coronado Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Coronado Island")
-unzip("Data/Dec 2020/SEINet/Terms/Coronados Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Coronados Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Coronados Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Coronados Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Geronimo Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Geronimo Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Guadalupe I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Guadalupe I")
-unzip("Data/Dec 2020/SEINet/Terms/Guadalupe Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Guadalupe Is")
-unzip("Data/Dec 2020/SEINet/Terms/Guadalupe Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Guadalupe Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Isla Cedros.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla Cedros")
-unzip("Data/Dec 2020/SEINet/Terms/Isla Coronado.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla Coronado")
-unzip("Data/Dec 2020/SEINet/Terms/Isla de Cedros.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla de Cedros")
-unzip("Data/Dec 2020/SEINet/Terms/Isla Guadalupe.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla Guadalupe")
-unzip("Data/Dec 2020/SEINet/Terms/Isla Natividad.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla Natividad")
-unzip("Data/Dec 2020/SEINet/Terms/Isla San Benito.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla San Benito")
-unzip("Data/Dec 2020/SEINet/Terms/Isla San Martin.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla San Martin")
-unzip("Data/Dec 2020/SEINet/Terms/Isla Todos Santos.zip", exdir = "Data/Dec 2020/SEINet/Terms/Isla Todos Santos")
-unzip("Data/Dec 2020/SEINet/Terms/Islas de Todos Santos.zip", exdir = "Data/Dec 2020/SEINet/Terms/Islas de Todos Santos")
-unzip("Data/Dec 2020/SEINet/Terms/Islas San Benito.zip", exdir = "Data/Dec 2020/SEINet/Terms/Islas San Benito")
-unzip("Data/Dec 2020/SEINet/Terms/Islas Todos Santos.zip", exdir = "Data/Dec 2020/SEINet/Terms/Islas Todos Santos")
-
-unzip("Data/Dec 2020/SEINet/Terms/Jeronimo Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Jeronimo Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Martin I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Martin I")
-unzip("Data/Dec 2020/SEINet/Terms/Martin Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Martin Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Miguel Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Miguel Is")
-unzip("Data/Dec 2020/SEINet/Terms/Miguel Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Miguel Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Natividad Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Natividad Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Nicholas Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Nicholas Island")
-unzip("Data/Dec 2020/SEINet/Terms/Nicolas I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Nicolas I")
-unzip("Data/Dec 2020/SEINet/Terms/Nicolas Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Nicolas Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Santa Cruz I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Cruz I")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Cruz Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Cruz Is")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Cruz Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Cruz Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Cruz Islan.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Cruz Islan")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Cruz Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Cruz Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Santa Rosa I.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Rosa I")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Rosa Is.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Rosa Is")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Rosa Isl.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Rosa Isl")
-unzip("Data/Dec 2020/SEINet/Terms/Santa Rosa Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Santa Rosa Island")
-
-unzip("Data/Dec 2020/SEINet/Terms/Todos Santos del.zip", exdir = "Data/Dec 2020/SEINet/Terms/Todos Santos del")
-unzip("Data/Dec 2020/SEINet/Terms/Todos Santos Island.zip", exdir = "Data/Dec 2020/SEINet/Terms/Todos Santos Island")
+walk(seiterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/SEINet/Terms/", .x),
+                       exdir = str_c("Data/Dec 2020/SEINet/Terms/Unzipped/", .x),
+                       overwrite = TRUE))
 ```
 
+Now, we extract the occurrence data for each file, and glue all of the data together.
 
-After unzipping, we'll import into R.
+```{r extract csvs and glue}
+seiterm_occpath <- "Data/Dec 2020/SEINet/Terms/Unzipped/"
+seiterm_occdirs <- list.files(seiterm_occpath)
 
-```{r extract csvs}
-Anacapa_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Anacapa Island/occurrences.csv", col_types = cols(.default = "c"))
+seinet_terms <- read_csv("Data/Dec 2020/SEINet/Headers.csv", col_types = cols(.default = "c"))
 
-Barbara_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Barbara Isl/occurrences.csv", col_types = cols(.default = "c"))
-Barbara_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Barbara Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Benito_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Benito Is/occurrences.csv", col_types = cols(.default = "c"))
-Benito_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Benito Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Catalina_I <- read_csv("Data/Dec 2020/SEINet/Terms/Catalina I/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Catalina Is/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Catalina Isl/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Islan <- read_csv("Data/Dec 2020/SEINet/Terms/Catalina Islan/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Catalina Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Cedros_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Cedros Is/occurrences.csv", col_types = cols(.default = "c"))
-Cedros_Islan <- read_csv("Data/Dec 2020/SEINet/Terms/Cedros Islan/occurrences.csv", col_types = cols(.default = "c"))
-Cedros_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Cedros Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Clement_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Clement Island/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Clemente Is/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Clemente Isl/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Clemente Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Coronado_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Coronado Is/occurrences.csv", col_types = cols(.default = "c"))
-Coronado_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Coronado Isl/occurrences.csv", col_types = cols(.default = "c"))
-Coronado_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Coronado Island/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Coronados Isl/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Coronados Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Geronimo_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Geronimo Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Guadalupe_I <- read_csv("Data/Dec 2020/SEINet/Terms/Guadalupe I/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Guadalupe Is/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Guadalupe Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Isla_Cedros <- read_csv("Data/Dec 2020/SEINet/Terms/Isla Cedros/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Coronado <- read_csv("Data/Dec 2020/SEINet/Terms/Isla Coronado/occurrences.csv", col_types = cols(.default = "c"))
-Isla_de_Cedros <- read_csv("Data/Dec 2020/SEINet/Terms/Isla de Cedros/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Guadalupe <- read_csv("Data/Dec 2020/SEINet/Terms/Isla Guadalupe/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Natividad <- read_csv("Data/Dec 2020/SEINet/Terms/Isla Natividad/occurrences.csv", col_types = cols(.default = "c"))
-Isla_San_Benito <- read_csv("Data/Dec 2020/SEINet/Terms/Isla San Benito/occurrences.csv", col_types = cols(.default = "c"))
-Isla_San_Martin <- read_csv("Data/Dec 2020/SEINet/Terms/Isla San Martin/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Todos_Santos  <- read_csv("Data/Dec 2020/SEINet/Terms/Isla Todos Santos/occurrences.csv", col_types = cols(.default = "c"))
-Islas_de_Todos_Santos <- read_csv("Data/Dec 2020/SEINet/Terms/Islas de Todos Santos/occurrences.csv", col_types = cols(.default = "c"))
-Islas_San_Benito <- read_csv("Data/Dec 2020/SEINet/Terms/Islas San Benito/occurrences.csv", col_types = cols(.default = "c"))
-Islas_Todos_Santos <- read_csv("Data/Dec 2020/SEINet/Terms/Islas Todos Santos/occurrences.csv", col_types = cols(.default = "c"))
-
-Jeronimo_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Jeronimo Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Martin_I <- read_csv("Data/Dec 2020/SEINet/Terms/Martin I/occurrences.csv", col_types = cols(.default = "c"))
-Martin_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Martin Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Miguel_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Miguel Is/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Miguel Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Natividad_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Natividad Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Nicholas_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Nicholas Island/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_I <- read_csv("Data/Dec 2020/SEINet/Terms/Nicolas I/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Nicolas Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Santa_Cruz_I <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Cruz I/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Cruz Is/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Cruz Isl/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Islan <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Cruz Islan/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Cruz Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Santa_Rosa_I <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Rosa I/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Is <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Rosa Isl/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Isl <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Rosa Isl/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Santa Rosa Island/occurrences.csv", col_types = cols(.default = "c"))
-
-Todos_Santos_del <- read_csv("Data/Dec 2020/SEINet/Terms/Todos Santos del/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_Island <- read_csv("Data/Dec 2020/SEINet/Terms/Todos Santos Island/occurrences.csv", col_types = cols(.default = "c"))
-```
-
-Now, we want to join all of the terms datasets into one big one.
-
-```{r glue terms}
-seinet_terms <- full_join(Anacapa_Island, Barbara_Isl)
-seinet_terms <- full_join(seinet_terms, Barbara_Island)
-
-seinet_terms <- full_join(seinet_terms, Benito_Is)
-seinet_terms <- full_join(seinet_terms, Benito_Island)
-
-seinet_terms <- full_join(seinet_terms, Catalina_I)
-seinet_terms <- full_join(seinet_terms, Catalina_Is)
-seinet_terms <- full_join(seinet_terms, Catalina_Isl)
-seinet_terms <- full_join(seinet_terms, Catalina_Islan)
-seinet_terms <- full_join(seinet_terms, Catalina_Island)
-
-seinet_terms <- full_join(seinet_terms, Cedros_Is)
-seinet_terms <- full_join(seinet_terms, Cedros_Islan)
-seinet_terms <- full_join(seinet_terms, Cedros_Island)
-
-seinet_terms <- full_join(seinet_terms, Clement_Island)
-seinet_terms <- full_join(seinet_terms, Clemente_Is)
-seinet_terms <- full_join(seinet_terms, Clemente_Isl)
-seinet_terms <- full_join(seinet_terms, Clemente_Island)
-
-seinet_terms <- full_join(seinet_terms, Coronado_Is)
-seinet_terms <- full_join(seinet_terms, Coronado_Isl)
-seinet_terms <- full_join(seinet_terms, Coronado_Island)
-seinet_terms <- full_join(seinet_terms, Coronados_Isl)
-seinet_terms <- full_join(seinet_terms, Coronados_Island)
-
-seinet_terms <- full_join(seinet_terms, Geronimo_Island)
-
-seinet_terms <- full_join(seinet_terms, Guadalupe_I)
-seinet_terms <- full_join(seinet_terms, Guadalupe_Is)
-seinet_terms <- full_join(seinet_terms, Guadalupe_Island)
-
-seinet_terms <- full_join(seinet_terms, Isla_Cedros)
-seinet_terms <- full_join(seinet_terms, Isla_Coronado)
-seinet_terms <- full_join(seinet_terms, Isla_de_Cedros)
-seinet_terms <- full_join(seinet_terms, Isla_Guadalupe)
-seinet_terms <- full_join(seinet_terms, Isla_Natividad)
-seinet_terms <- full_join(seinet_terms, Isla_San_Benito)
-seinet_terms <- full_join(seinet_terms, Isla_San_Martin)
-seinet_terms <- full_join(seinet_terms, Isla_Todos_Santos)
-seinet_terms <- full_join(seinet_terms, Islas_de_Todos_Santos)
-seinet_terms <- full_join(seinet_terms, Islas_San_Benito)
-seinet_terms <- full_join(seinet_terms, Islas_Todos_Santos)
-
-seinet_terms <- full_join(seinet_terms, Jeronimo_Island)
-
-seinet_terms <- full_join(seinet_terms, Martin_I)
-seinet_terms <- full_join(seinet_terms, Martin_Island)
-
-seinet_terms <- full_join(seinet_terms, Miguel_Is)
-seinet_terms <- full_join(seinet_terms, Miguel_Island)
-
-seinet_terms <- full_join(seinet_terms, Natividad_Island)
-
-seinet_terms <- full_join(seinet_terms, Nicholas_Island)
-seinet_terms <- full_join(seinet_terms, Nicolas_I)
-seinet_terms <- full_join(seinet_terms, Nicolas_Island)
-
-seinet_terms <- full_join(seinet_terms, Santa_Cruz_I)
-seinet_terms <- full_join(seinet_terms, Santa_Cruz_Is)
-seinet_terms <- full_join(seinet_terms, Santa_Cruz_Isl)
-seinet_terms <- full_join(seinet_terms, Santa_Cruz_Islan)
-seinet_terms <- full_join(seinet_terms, Santa_Cruz_Island)
-
-seinet_terms <- full_join(seinet_terms, Santa_Rosa_I)
-seinet_terms <- full_join(seinet_terms, Santa_Rosa_Is)
-seinet_terms <- full_join(seinet_terms, Santa_Rosa_Isl)
-seinet_terms <- full_join(seinet_terms, Santa_Rosa_Island)
-
-seinet_terms <- full_join(seinet_terms, Todos_Santos_del)
-seinet_terms <- full_join(seinet_terms, Todos_Santos_Island)
+for(dir in seiterm_occdirs) {
+  sub_folders = list.files(paste(seiterm_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(seiterm_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    seinet_terms = rbind(seinet_terms,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(seiterm_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(seiterm_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        seinet_terms = rbind(seinet_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
 
 ```
 
-Voila, "seinet_terms" is a huge dataset and has everyone (but probably some dupes). 
+Voila, "seinet_terms" is a huge dataset and has everyone (but has many dupes). 
 
 # WKT data
 
 There are fewer WKT datasets, but we need to extact and glue them too. 
 ```{r unzip WKTs}
-unzip("Data/Dec 2020/SEINet/WKTs/Barbara.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Barbara")
-unzip("Data/Dec 2020/SEINet/WKTs/Benito.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Benito")
-unzip("Data/Dec 2020/SEINet/WKTs/Catalina.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Catalina")
-unzip("Data/Dec 2020/SEINet/WKTs/Clemente.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Clemente")
-unzip("Data/Dec 2020/SEINet/WKTs/Coronados.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Coronados")
-unzip("Data/Dec 2020/SEINet/WKTs/Geronimo.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Geronimo")
-unzip("Data/Dec 2020/SEINet/WKTs/Guadalupe.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Guadalupe")
-unzip("Data/Dec 2020/SEINet/WKTs/Martin.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Martin")
-unzip("Data/Dec 2020/SEINet/WKTs/Miguel_Rosa_Cruz.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Miguel_Rosa_Cruz")
-unzip("Data/Dec 2020/SEINet/WKTs/Natividad_Cedros.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Natividad_Cedros")
-unzip("Data/Dec 2020/SEINet/WKTs/Nicolas.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Nicolas")
-unzip("Data/Dec 2020/SEINet/WKTs/Todos_Santos.zip", exdir = "Data/Dec 2020/SEINet/WKTs/Todos_Santos")
+seiwkt_zipfiles <- list.files("Data/Dec 2020/SEINet/WKTs", pattern = "*.zip")
+
+walk(seiwkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/SEINet/WKTs/", .x),
+                       exdir = str_c("Data/Dec 2020/SEINet/WKTs/Unzipped/", .x),
+                       overwrite = TRUE))
 ```
 
-```{r import WKTs}
-Barbara_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Barbara/occurrences.csv", col_types = cols(.default = "c"))
-Benito_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Benito/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Catalina/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Clemente/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Coronados/occurrences.csv", col_types = cols(.default = "c"))
-Geronimo_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Geronimo/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Guadalupe/occurrences.csv", col_types = cols(.default = "c"))
-Martin_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Martin/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Rosa_Cruz_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Miguel_Rosa_Cruz/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Cedros_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Natividad_Cedros/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Nicolas/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_WKT <- read_csv("Data/Dec 2020/SEINet/WKTs/Todos_Santos/occurrences.csv", col_types = cols(.default = "c"))
-```
+```{r import and glue seinet WKTs}
+seiwkt_occpath <- "Data/Dec 2020/CCH2/WKTs/Unzipped/"
+seiwkt_occdirs <- list.files(seiwkt_occpath)
 
-```{r glue WKTs}
-seinet_wkts <- full_join(Barbara_WKT, Benito_WKT)
-seinet_wkts <- full_join(seinet_wkts, Catalina_WKT)
-seinet_wkts <- full_join(seinet_wkts, Clemente_WKT)
-seinet_wkts <- full_join(seinet_wkts, Coronados_WKT)
-seinet_wkts <- full_join(seinet_wkts, Geronimo_WKT)
-seinet_wkts <- full_join(seinet_wkts, Guadalupe_WKT)
-seinet_wkts <- full_join(seinet_wkts, Martin_WKT)
-seinet_wkts <- full_join(seinet_wkts, Miguel_Rosa_Cruz_WKT)
-seinet_wkts <- full_join(seinet_wkts, Natividad_Cedros_WKT)
-seinet_wkts <- full_join(seinet_wkts, Nicolas_WKT)
-seinet_wkts <- full_join(seinet_wkts, Todos_Santos_WKT)
+seinet_wkts <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in seiwkt_occdirs) {
+  sub_folders = list.files(paste(seiwkt_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## there is occurrences.csv in this directory read it in and append to a data.frame.
+    ## read in data 
+    temp_data = read_csv(file = paste(seiwkt_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    ## append
+    seinet_wkts = rbind(seinet_wkts,temp_data);
+  } else {
+    ## try go one more directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(seiwkt_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(seiwkt_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        seinet_wkts = rbind(seinet_wkts,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
 ```
 
 # The final gluing
