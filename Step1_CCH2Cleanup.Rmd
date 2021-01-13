@@ -26,10 +26,7 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 # Term Data
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
 ```{r CCH2 unzip}
-
 zipfiles <- list.files("Data/Dec 2020/CCH2/Terms", pattern = "*.zip")
-
-print(zipfiles)
 
 walk(zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/Terms/", .x),
                        exdir = str_c("Data/Dec 2020/CCH2/Terms/Unzipped/", .x),
@@ -77,47 +74,41 @@ Voila, "cch2_terms" is a huge dataset and has everyone (but probably some dupes)
 
 There are fewer WKT datasets, but we need to extact and glue them too. 
 ```{r unzip WKTs}
-unzip("Data/Dec 2020/CCH2/WKTs/Barbara.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Barbara")
-unzip("Data/Dec 2020/CCH2/WKTs/Benito.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Benito")
-unzip("Data/Dec 2020/CCH2/WKTs/Catalina.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Catalina")
-unzip("Data/Dec 2020/CCH2/WKTs/Clemente.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Clemente")
-unzip("Data/Dec 2020/CCH2/WKTs/Coronados.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Coronados")
-unzip("Data/Dec 2020/CCH2/WKTs/Geronimo.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Geronimo")
-unzip("Data/Dec 2020/CCH2/WKTs/Guadalupe.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Guadalupe")
-unzip("Data/Dec 2020/CCH2/WKTs/Martin.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Martin")
-unzip("Data/Dec 2020/CCH2/WKTs/Miguel_Rosa_Cruz.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Miguel_Rosa_Cruz")
-unzip("Data/Dec 2020/CCH2/WKTs/Natividad_Cedros.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Natividad_Cedros")
-unzip("Data/Dec 2020/CCH2/WKTs/Nicolas.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Nicolas")
-unzip("Data/Dec 2020/CCH2/WKTs/Todos_Santos.zip", exdir = "Data/Dec 2020/CCH2/WKTs/Todos_Santos")
+zipfiles <- list.files("Data/Dec 2020/CCH2/WKTs", pattern = "*.zip")
+
+walk(zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/WKTs/", .x),
+                       exdir = str_c("Data/Dec 2020/CCH2/WKTs/Unzipped/", .x),
+                       overwrite = TRUE))
 ```
 
 ```{r import WKTs}
-Barbara_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Barbara/occurrences.csv", col_types = cols(.default = "c"))
-Benito_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Benito/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Catalina/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Clemente/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Coronados/occurrences.csv", col_types = cols(.default = "c"))
-Geronimo_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Geronimo/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Guadalupe/occurrences.csv", col_types = cols(.default = "c"))
-Martin_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Martin/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Rosa_Cruz_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Miguel_Rosa_Cruz/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Cedros_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Natividad_Cedros/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Nicolas/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_WKT <- read_csv("Data/Dec 2020/CCH2/WKTs/Todos_Santos/occurrences.csv", col_types = cols(.default = "c"))
-```
+occpath <- "Data/Dec 2020/CCH2/WKTs/Unzipped/"
+occdirs <- list.files(occpath)
 
-```{r glue WKTs}
-cch2_wkts <- full_join(Barbara_WKT, Benito_WKT)
-cch2_wkts <- full_join(cch2_wkts, Catalina_WKT)
-cch2_wkts <- full_join(cch2_wkts, Clemente_WKT)
-cch2_wkts <- full_join(cch2_wkts, Coronados_WKT)
-cch2_wkts <- full_join(cch2_wkts, Geronimo_WKT)
-cch2_wkts <- full_join(cch2_wkts, Guadalupe_WKT)
-cch2_wkts <- full_join(cch2_wkts, Martin_WKT)
-cch2_wkts <- full_join(cch2_wkts, Miguel_Rosa_Cruz_WKT)
-cch2_wkts <- full_join(cch2_wkts, Natividad_Cedros_WKT)
-cch2_wkts <- full_join(cch2_wkts, Nicolas_WKT)
-cch2_wkts <- full_join(cch2_wkts, Todos_Santos_WKT)
+cch2_wkts <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in occdirs) {
+  sub_folders = list.files(paste(occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## there is occurrences.csv in this directory read it in and append to a data.frame.
+    ## read in data 
+    temp_data = read_csv(file = paste(occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    ## append
+    cch2_wkts = rbind(cch2_wkts,temp_data);
+  } else {
+    ## try go one more directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        cch2_wkts = rbind(cch2_wkts,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
 ```
 
 # The final gluing
