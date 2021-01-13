@@ -36,198 +36,40 @@ walk(zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CCH2/Terms/", .x),
                        overwrite = TRUE))
 ```
 
-Now, we extract the occurrence data for each file and create an object for it.
+Now, we extract the occurrence data for each file, and glue all of the data together.
 
-```{r extract csvs}
-Anacapa_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Anacapa I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Anacapa_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Anacapa Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Anacapa_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Anacapa Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Anacapa_Islan <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Anacapa Islan.zip/occurrences.csv", col_types = cols(.default = "c"))
-Anacapa_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Anacapa Island.zip/occurrences.csv", col_types = cols(.default = "c"))
 
-Barbara_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Barbara Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Barbara_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Barbara Island.zip/occurrences.csv", col_types = cols(.default = "c"))
+```{r extract csvs and glue}
+occpath <- "Data/Dec 2020/CCH2/Terms/Unzipped/"
+occdirs <- list.files(occpath)
 
-Benito_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Benito Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Benito_Islan <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Benito Islan.zip/occurrences.csv", col_types = cols(.default = "c"))
-Benito_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Benito Island.zip/occurrences.csv", col_types = cols(.default = "c"))
+cch2_terms <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
 
-Catalina_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Catalina I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Catalina Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Catalina Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Islan <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Catalina Islan.zip/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Catalina Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Cedros_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Cedros Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Cedros_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Cedros Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Cedros_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Cedros Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Clement_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Clement Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Clemente I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Clemente Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Clemente Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Clemente Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Coronado_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Coronado Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Coronado_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Coronado Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Coronados Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Coronados Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Geronimo_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Geronimo Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Guadalupe_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Guadalupe Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Guadalupe Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Guadalupe Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Isla_Cedros <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Cedros.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Coronado <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Coronado.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_de_Cedros <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla de Cedros.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Geronimo <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Geronimo.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Guadalupe <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Guadalupe.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Natividad <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Natividad.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_San_Benito <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla San Benito.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_San_Geronimo <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla San Geronimo.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_San_Martin <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla San Martin.zip/occurrences.csv", col_types = cols(.default = "c"))
-Isla_Todos_Santos <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Isla Todos Santos.zip/occurrences.csv", col_types = cols(.default = "c"))
-Islas_de_Todos_Santos <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Islas de Todos Santos.zip/occurrences.csv", col_types = cols(.default = "c"))
-Islas_San_Benito <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Islas San Benito.zip/occurrences.csv", col_types = cols(.default = "c"))
-Islas_Todos_Santos <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Islas Todos Santos.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Jeronimo_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Jeronimo Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Martin_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Martin Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Martin_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Martin Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Miguel_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Miguel I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Miguel Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Miguel Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Islan <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Miguel Islan.zip/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Miguel Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Natividad_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Natividad Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Natividad Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Natividad Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Nicholas_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicholas Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Nicholas_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicholas Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicolas I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicolas Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_Islan <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicolas Islan.zip/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Nicolas Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-San_Martin_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/San Martin I.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Santa_Cruz_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Cruz I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Is <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Cruz Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Cruz Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Cruz_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Cruz Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Santa_Rosa_I <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Rosa I.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Is  <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Rosa Is.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Isl <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Rosa Isl.zip/occurrences.csv", col_types = cols(.default = "c"))
-Santa_Rosa_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Santa Rosa Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-
-Todo_Santos_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Todo Santos Island.zip/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_del <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Todos Santos del.zip/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_Island <- read_csv("Data/Dec 2020/CCH2/Terms/Unzipped/Todos Santos Island.zip/occurrences.csv", col_types = cols(.default = "c"))
+for(dir in occdirs) {
+  sub_folders = list.files(paste(occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## there is occurrences.csv in this directory read it in and append to a data.frame.
+    ## read in data 
+    temp_data = read_csv(file = paste(occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    ## append
+    cch2_terms = rbind(cch2_terms,temp_data);
+  } else {
+    ## try go one more directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        cch2_terms = rbind(cch2_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
 
 ```
 
-
-Now, we want to join all of the datasets into one big one.
-
-```{r glue terms}
-cch2_terms <- full_join(Anacapa_I, Anacapa_Is)
-cch2_terms <- full_join(cch2_terms, Anacapa_Isl)
-cch2_terms <- full_join(cch2_terms, Anacapa_Islan)
-cch2_terms <- full_join(cch2_terms, Anacapa_Island)
-
-cch2_terms <- full_join(cch2_terms, Barbara_Isl)
-cch2_terms <- full_join(cch2_terms, Barbara_Island)
-
-cch2_terms <- full_join(cch2_terms, Benito_Isl)
-cch2_terms <- full_join(cch2_terms, Benito_Islan)
-cch2_terms <- full_join(cch2_terms, Benito_Island)
-
-cch2_terms <- full_join(cch2_terms, Catalina_I)
-cch2_terms <- full_join(cch2_terms, Catalina_Is)
-cch2_terms <- full_join(cch2_terms, Catalina_Isl)
-cch2_terms <- full_join(cch2_terms, Catalina_Islan)
-cch2_terms <- full_join(cch2_terms, Catalina_Island)
-
-cch2_terms <- full_join(cch2_terms, Cedros_Is)
-cch2_terms <- full_join(cch2_terms, Cedros_Isl)
-cch2_terms <- full_join(cch2_terms, Cedros_Island)
-
-cch2_terms <- full_join(cch2_terms, Clement_Island)
-cch2_terms <- full_join(cch2_terms, Clemente_I)
-cch2_terms <- full_join(cch2_terms, Clemente_Is)
-cch2_terms <- full_join(cch2_terms, Clemente_Isl)
-cch2_terms <- full_join(cch2_terms, Clemente_Island)
-
-cch2_terms <- full_join(cch2_terms, Coronado_Isl)
-cch2_terms <- full_join(cch2_terms, Coronado_Island)
-cch2_terms <- full_join(cch2_terms, Coronados_Isl)
-cch2_terms <- full_join(cch2_terms, Coronados_Island)
-
-cch2_terms <- full_join(cch2_terms, Geronimo_Island)
-
-cch2_terms <- full_join(cch2_terms, Guadalupe_Is)
-cch2_terms <- full_join(cch2_terms, Guadalupe_Isl)
-cch2_terms <- full_join(cch2_terms, Guadalupe_Island)
-
-cch2_terms <- full_join(cch2_terms, Isla_Cedros)
-cch2_terms <- full_join(cch2_terms, Isla_Coronado)
-cch2_terms <- full_join(cch2_terms, Isla_de_Cedros)
-cch2_terms <- full_join(cch2_terms, Isla_Geronimo)
-cch2_terms <- full_join(cch2_terms, Isla_Guadalupe)
-cch2_terms <- full_join(cch2_terms, Isla_Natividad)
-cch2_terms <- full_join(cch2_terms, Isla_San_Benito)
-cch2_terms <- full_join(cch2_terms, Isla_San_Geronimo)
-cch2_terms <- full_join(cch2_terms, Isla_San_Martin)
-cch2_terms <- full_join(cch2_terms, Isla_Todos_Santos)
-cch2_terms <- full_join(cch2_terms, Islas_de_Todos_Santos)
-cch2_terms <- full_join(cch2_terms, Islas_San_Benito)
-cch2_terms <- full_join(cch2_terms, Islas_Todos_Santos)
-
-cch2_terms <- full_join(cch2_terms, Jeronimo_Island)
-
-cch2_terms <- full_join(cch2_terms, Martin_Is)
-cch2_terms <- full_join(cch2_terms, Martin_Island)
-
-cch2_terms <- full_join(cch2_terms, Miguel_I)
-cch2_terms <- full_join(cch2_terms, Miguel_Is)
-cch2_terms <- full_join(cch2_terms, Miguel_Isl)
-cch2_terms <- full_join(cch2_terms, Miguel_Islan)
-cch2_terms <- full_join(cch2_terms, Miguel_Island)
-
-cch2_terms <- full_join(cch2_terms, Natividad_Is)
-cch2_terms <- full_join(cch2_terms, Natividad_Isl)
-cch2_terms <- full_join(cch2_terms, Natividad_Island)
-
-cch2_terms <- full_join(cch2_terms, Nicholas_Isl)
-cch2_terms <- full_join(cch2_terms, Nicholas_Island)
-cch2_terms <- full_join(cch2_terms, Nicolas_I)
-cch2_terms <- full_join(cch2_terms, Nicolas_Isl)
-cch2_terms <- full_join(cch2_terms, Nicolas_Islan)
-cch2_terms <- full_join(cch2_terms, Nicolas_Island)
-
-cch2_terms <- full_join(cch2_terms, San_Martin_I)
-
-cch2_terms <- full_join(cch2_terms, Santa_Cruz_I)
-cch2_terms <- full_join(cch2_terms, Santa_Cruz_Is)
-cch2_terms <- full_join(cch2_terms, Santa_Cruz_Isl)
-cch2_terms <- full_join(cch2_terms, Santa_Cruz_Island)
-
-cch2_terms <- full_join(cch2_terms, Santa_Rosa_I)
-cch2_terms <- full_join(cch2_terms, Santa_Rosa_Is)
-cch2_terms <- full_join(cch2_terms, Santa_Rosa_Isl)
-cch2_terms <- full_join(cch2_terms, Santa_Rosa_Island)
-
-cch2_terms <- full_join(cch2_terms, Todo_Santos_Island)
-cch2_terms <- full_join(cch2_terms, Todos_Santos_del)
-cch2_terms <- full_join(cch2_terms, Todos_Santos_Island)
-```
 
 Voila, "cch2_terms" is a huge dataset and has everyone (but probably some dupes). 
 
