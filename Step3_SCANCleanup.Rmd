@@ -1,5 +1,5 @@
 ---
-title: "Step5_SCANBugsCleanup"
+title: "Step3_SCANBugsCleanup"
 author: "Josie Lesage"
 date: "12/17/2020"
 output: html_document
@@ -28,65 +28,39 @@ To clean and generate a single data file, we must begin by extracting each zip f
 
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
 ```{r SCAN unzip}
-unzip("Data/Dec 2020/SCAN/Terms/Anacapa_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Anacapa_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Barbara_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Barbara_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Benito_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Benito_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Catalina_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Catalina_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Cedros_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Cedros_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Clement_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Clement_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Coronado_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Coronado_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Cruz_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Cruz_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Geronimo_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Geronimo_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Guadalupe_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Guadalupe_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Jeronimo_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Jeronimo_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Martin_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Martin_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Miguel_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Miguel_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Natividad_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Natividad_Isl")
-unzip("Data/Dec 2020/SCAN/Terms/Nicholas_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Nicholas_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Nicolas_Is.zip", exdir = "Data/Dec 2020/SCAN/Terms/Nicolas_Is")
-unzip("Data/Dec 2020/SCAN/Terms/Todo_Santos_Isl.zip", exdir = "Data/Dec 2020/SCAN/Terms/Todo_Santos_Isl")
+scanterm_zipfiles <- list.files("Data/Dec 2020/SCAN/Terms", pattern = "*.zip")
 
+walk(scanterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/SCAN/Terms/", .x),
+                       exdir = str_c("Data/Dec 2020/SCAN/Terms/Unzipped/", .x),
+                       overwrite = TRUE))
 ```
 
-```{r extract csvs}
-Anacapa_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Anacapa_Is/occurrences.csv", col_types = cols(.default = "c"))
-Barbara_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Barbara_Is/occurrences.csv", col_types = cols(.default = "c"))
-Benito_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Benito_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Catalina_Is/occurrences.csv", col_types = cols(.default = "c"))
-Cedros_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Cedros_Is/occurrences.csv", col_types = cols(.default = "c"))
-Clement_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Clement_Is/occurrences.csv", col_types = cols(.default = "c"))
-Coronado_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Coronado_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Cruz_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Cruz_Is/occurrences.csv", col_types = cols(.default = "c"))
-Geronimo_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Geronimo_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Guadalupe_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Jeronimo_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Jeronimo_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Martin_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Martin_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Miguel_Is/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Natividad_Isl/occurrences.csv", col_types = cols(.default = "c"))
-Nicholas_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Nicholas_Is/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_Is <- read_csv("Data/Dec 2020/SCAN/Terms/Nicolas_Is/occurrences.csv", col_types = cols(.default = "c"))
-Todo_Santos_Isl <- read_csv("Data/Dec 2020/SCAN/Terms/Todo_Santos_Isl/occurrences.csv", col_types = cols(.default = "c"))
-```
+```{r extract and glue term csvs}
+scanterm_occpath <- "Data/Dec 2020/SCAN/Terms/Unzipped/"
+scanterm_occdirs <- list.files(scanterm_occpath)
 
+scan_terms <- read_csv("Data/Dec 2020/SCAN/Headers.csv", col_types = cols(.default = "c"))
 
-Now, we want to join all of the datasets into one big one.
-
-```{r glue terms}
-SCAN_terms <- full_join(Anacapa_Is, Barbara_Is)
-SCAN_terms <- full_join(SCAN_terms, Benito_Isl)
-SCAN_terms <- full_join(SCAN_terms, Catalina_Is)
-SCAN_terms <- full_join(SCAN_terms, Clement_Is)
-SCAN_terms <- full_join(SCAN_terms, Coronado_Isl)
-SCAN_terms <- full_join(SCAN_terms, Cruz_Is)
-SCAN_terms <- full_join(SCAN_terms, Geronimo_Isl)
-SCAN_terms <- full_join(SCAN_terms, Guadalupe_Isl)
-SCAN_terms <- full_join(SCAN_terms, Jeronimo_Isl)
-SCAN_terms <- full_join(SCAN_terms, Martin_Isl)
-SCAN_terms <- full_join(SCAN_terms, Miguel_Isl)
-SCAN_terms <- full_join(SCAN_terms, Natividad_Isl)
-SCAN_terms <- full_join(SCAN_terms, Nicholas_Is)
-SCAN_terms <- full_join(SCAN_terms, Nicolas_Is)
-SCAN_terms <- full_join(SCAN_terms, Todo_Santos_Isl)
+for(dir in scanterm_occdirs) {
+  sub_folders = list.files(paste(scanterm_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(scanterm_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    scan_terms = rbind(scan_terms,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(scanterm_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(scanterm_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        scan_terms = rbind(scan_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
 ```
 
 Voila, "SCAN_terms" is a huge dataset and has everyone (but probably some dupes). 
@@ -94,56 +68,51 @@ Voila, "SCAN_terms" is a huge dataset and has everyone (but probably some dupes)
 # Spatial/WKT data
 
 There are fewer WKT datasets, but we need to extact and glue them too. 
-```{r unzip WKTs}
-unzip("Data/Dec 2020/SCAN/WKTs/Barbara.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Barbara")
-unzip("Data/Dec 2020/SCAN/WKTs/Benito.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Benito")
-unzip("Data/Dec 2020/SCAN/WKTs/Catalina.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Catalina")
-unzip("Data/Dec 2020/SCAN/WKTs/Clemente.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Clemente")
-unzip("Data/Dec 2020/SCAN/WKTs/Coronados.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Coronados")
-unzip("Data/Dec 2020/SCAN/WKTs/Geronimo.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Geronimo")
-unzip("Data/Dec 2020/SCAN/WKTs/Guadalupe.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Guadalupe")
-unzip("Data/Dec 2020/SCAN/WKTs/Martin.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Martin")
-unzip("Data/Dec 2020/SCAN/WKTs/Miguel_Rosa_Cruz.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Miguel_Rosa_Cruz")
-unzip("Data/Dec 2020/SCAN/WKTs/Natividad_Cedros.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Natividad_Cedros")
-unzip("Data/Dec 2020/SCAN/WKTs/Nicolas.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Nicolas")
-unzip("Data/Dec 2020/SCAN/WKTs/Todos_Santos.zip", exdir = "Data/Dec 2020/SCAN/WKTs/Todos_Santos")
+```{r unzip SCAN WKTs}
+scanwkt_zipfiles <- list.files("Data/Dec 2020/SCAN/WKTs", pattern = "*.zip")
+
+walk(scanwkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/SCAN/WKTs/", .x),
+                       exdir = str_c("Data/Dec 2020/SCAN/WKTs/Unzipped/", .x),
+                       overwrite = TRUE))
 ```
 
-```{r import WKTs}
-Barbara_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Barbara/occurrences.csv", col_types = cols(.default = "c"))
-Benito_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Benito/occurrences.csv", col_types = cols(.default = "c"))
-Catalina_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Catalina/occurrences.csv", col_types = cols(.default = "c"))
-Clemente_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Clemente/occurrences.csv", col_types = cols(.default = "c"))
-Coronados_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Coronados/occurrences.csv", col_types = cols(.default = "c"))
-Geronimo_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Geronimo/occurrences.csv", col_types = cols(.default = "c"))
-Guadalupe_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Guadalupe/occurrences.csv", col_types = cols(.default = "c"))
-Martin_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Martin/occurrences.csv", col_types = cols(.default = "c"))
-Miguel_Rosa_Cruz_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Miguel_Rosa_Cruz/occurrences.csv", col_types = cols(.default = "c"))
-Natividad_Cedros_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Natividad_Cedros/occurrences.csv", col_types = cols(.default = "c"))
-Nicolas_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Nicolas/occurrences.csv", col_types = cols(.default = "c"))
-Todos_Santos_WKT <- read_csv("Data/Dec 2020/SCAN/WKTs/Todos_Santos/occurrences.csv", col_types = cols(.default = "c"))
-```
+```{r import and glue SCAN WKTs}
+scanwkts_occpath <- "Data/Dec 2020/SCAN/WKTs/Unzipped/"
+scanwkts_occdirs <- list.files(scanwkts_occpath)
 
-```{r glue WKTs}
-SCAN_wkts <- full_join(Barbara_WKT, Benito_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Catalina_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Clemente_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Coronados_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Geronimo_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Guadalupe_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Martin_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Miguel_Rosa_Cruz_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Natividad_Cedros_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Nicolas_WKT)
-SCAN_wkts <- full_join(SCAN_wkts, Todos_Santos_WKT)
+scan_wkts <- read_csv("Data/Dec 2020/SCAN/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in scanwkts_occdirs) {
+  sub_folders = list.files(paste(scanwkts_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(scanwkts_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    scan_wkts = rbind(scan_wkts,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(scanwkts_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(scanwkts_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        scan_terms = rbind(scan_wkts,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+
+  
+
 ```
 
 # The final gluing
 
-Now that we have both a SCAN term and a SCAN WKT dataset, we need to remove as many duplicates as we possibly can. 
+Now that we have both a SCAN term and a SCAN WKT dataset, we need to remove as many duplicates as we possibly can. SCAN is the master "bugs" dataset, so we won't compare it to any other datasets. 
 
 ```{r dupe clear}
-SCAN_all <- full_join(SCAN_terms, SCAN_wkts)
+SCAN_all <- full_join(scan_terms, scan_wkts)
 SCAN_all_dist <- distinct(SCAN_all, id, .keep_all = TRUE)
 SCAN_all_dist_2 <- distinct(SCAN_all_dist, occurrenceID, .keep_all = TRUE)
 
