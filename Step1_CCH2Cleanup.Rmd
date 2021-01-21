@@ -16,7 +16,7 @@ library(tidyverse)
 # CCH2 Data
 
 ## Cleaning data and removing potential duplicates
-The code below should be run after you have downloaded datasets for each of the islands using the spatial/WKT module, and through the terms searches in the CCH2 database.
+The code below should be run after you have downloaded datasets for each of the islands using the spatial/WKT module and through the terms searches in the CCH2 database.
 
 ****
 To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
