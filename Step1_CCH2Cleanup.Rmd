@@ -22,6 +22,7 @@ The code below should be run after you have downloaded datasets for each of the 
 To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
 ****
 
+Wahoo github!
 
 # Term Data
 To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
