@@ -78,10 +78,10 @@ walk(seiwkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/SEINet/WKTs/", .x),
 ```
 
 ```{r import and glue seinet WKTs}
-seiwkt_occpath <- "Data/Dec 2020/CCH2/WKTs/Unzipped/"
+seiwkt_occpath <- "Data/Dec 2020/SEINet/WKTs/Unzipped/"
 seiwkt_occdirs <- list.files(seiwkt_occpath)
 
-seinet_wkts <- read_csv("Data/Dec 2020/CCH2/Headers.csv", col_types = cols(.default = "c"))
+seinet_wkts <- read_csv("Data/Dec 2020/SEINet/Headers.csv", col_types = cols(.default = "c"))
 
 for(dir in seiwkt_occdirs) {
   sub_folders = list.files(paste(seiwkt_occpath,dir,sep = ""))
