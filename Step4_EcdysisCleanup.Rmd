@@ -12,6 +12,117 @@ knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
 library(tidyverse)
 ```
 
-# Ecdysis Arthropod Data
+# Ecdysis Data
 
-To be added.
+## Cleaning data and removing potential duplicates
+The code below should be run after you have downloaded datasets for each of the islands, and the special terms searches, for the Ecdysis database.
+
+****
+To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
+****
+
+
+# Term Data
+To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
+
+```{r Ecdysis unzip}
+ecdysisterm_zipfiles <- list.files("Data/Dec 2020/Ecdysis/Terms", pattern = "*.zip")
+
+walk(ecdysisterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/Ecdysis/Terms/", .x),
+                       exdir = str_c("Data/Dec 2020/Ecdysis/Terms/Unzipped/", .x),
+                       overwrite = TRUE))
+```
+
+Now, we extract the occurrence data for each file, and glue all of the data together.
+
+```{r extract csvs and glue}
+ecdysisterm_occpath <- "Data/Dec 2020/Ecdysis/Terms/Unzipped/"
+ecdysisterm_occdirs <- list.files(ecdysisterm_occpath)
+
+Ecdysis_terms <- read_csv("Data/Dec 2020/Ecdysis/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in ecdysisterm_occdirs) {
+  sub_folders = list.files(paste(ecdysisterm_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(ecdysisterm_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    Ecdysis_terms = rbind(Ecdysis_terms,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(ecdysisterm_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(ecdysisterm_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        Ecdysis_terms = rbind(Ecdysis_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+
+```
+
+Voila, "Ecdysis_terms" is a huge dataset and has everyone (but has many dupes). 
+
+# WKT data
+
+There are fewer WKT datasets, but we need to extact and glue them too. 
+```{r unzip WKTs}
+ecdysiswkt_zipfiles <- list.files("Data/Dec 2020/Ecdysis/WKTs", pattern = "*.zip")
+
+walk(ecdysiswkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/Ecdysis/WKTs/", .x),
+                       exdir = str_c("Data/Dec 2020/Ecdysis/WKTs/Unzipped/", .x),
+                       overwrite = TRUE))
+```
+
+```{r import and glue Ecdysis WKTs}
+ecdysiswkt_occpath <- "Data/Dec 2020/Ecdysis/WKTs/Unzipped/"
+ecdysiswkt_occdirs <- list.files(ecdysiswkt_occpath)
+
+Ecdysis_wkts <- read_csv("Data/Dec 2020/Ecdysis/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in ecdysiswkt_occdirs) {
+  sub_folders = list.files(paste(ecdysiswkt_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## there is occurrences.csv in this directory read it in and append to a data.frame.
+    ## read in data 
+    temp_data = read_csv(file = paste(ecdysiswkt_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    ## append
+    Ecdysis_wkts = rbind(Ecdysis_wkts,temp_data);
+  } else {
+    ## try go one more directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(ecdysiswkt_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(ecdysiswkt_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        Ecdysis_wkts = rbind(Ecdysis_wkts,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+```
+
+# The final gluing
+
+Now that we have both a Ecdysis term and a Ecdysis WKT dataset, we need to remove as many duplicates as we possibly can. 
+
+Then, we'll refer this dataset against the Ecdysis dataset!
+
+```{r dupe clear}
+Ecdysis_all <- full_join(Ecdysis_terms, Ecdysis_wkts)
+Ecdysis_all_dist <- distinct(Ecdysis_all, id, .keep_all = TRUE)
+Ecdysis_all_dist_2 <- distinct(Ecdysis_all, occurrenceID, .keep_all = TRUE)
+
+scan_clean <- read_csv("Data/Dec 2020/SCAN/SCAN_Clean.csv", col_types = cols(.default = "c"))
+
+Ecdysis_no_scan <- anti_join(Ecdysis_all_dist_2, scan_clean, by = "id")
+Ecdysis_no_scan_2 <- anti_join(Ecdysis_no_scan, scan_clean, by = "occurrenceID")
+
+write.csv(Ecdysis_no_scan_2, file = "Data/Dec 2020/Ecdysis/Ecdysis_Clean.csv", na="", row.names=FALSE)
+```
+
