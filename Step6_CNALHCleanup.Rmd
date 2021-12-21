@@ -1,0 +1,122 @@
+---
+title: "Step6_Lichens"
+author: "Josie Lesage"
+date: "1/22/2021"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+
+# Setup packages
+library(tidyverse)
+```
+
+# CNALH Data
+
+## Cleaning data and removing potential duplicates
+The code below should be run after you have downloaded datasets for each of the islands, and the special terms searches, in the Lichen (CNALH) database.
+
+****
+To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
+****
+
+
+# Term Data
+To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
+
+
+To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
+```{r CNALH unzip}
+CNALHterm_zipfiles <- list.files("Data/Dec 2020/CNALH/Terms", pattern = "*.zip")
+
+walk(CNALHterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CNALH/Terms/", .x),
+                       exdir = str_c("Data/Dec 2020/CNALH/Terms/Unzipped/", .x),
+                       overwrite = TRUE))
+```
+
+```{r extract and glue term csvs}
+CNALHterm_occpath <- "Data/Dec 2020/CNALH/Terms/Unzipped/"
+CNALHterm_occdirs <- list.files(CNALHterm_occpath)
+
+CNALH_terms <- read_csv("Data/Dec 2020/CNALH/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in CNALHterm_occdirs) {
+  sub_folders = list.files(paste(CNALHterm_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(CNALHterm_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    CNALH_terms = rbind(CNALH_terms,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(CNALHterm_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(CNALHterm_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        CNALH_terms = rbind(CNALH_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+```
+
+Voila, "CNALH_terms" is a huge dataset and has everyone (but probably some dupes). 
+
+# Spatial/WKT data
+
+There are fewer WKT datasets, but we need to extact and glue them too. These were obtained by running "WKT" searches. 
+
+```{r unzip CNALH WKTs}
+CNALHwkt_zipfiles <- list.files("Data/Dec 2020/CNALH/WKTs", pattern = "*.zip")
+
+walk(CNALHwkt_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/CNALH/WKTs/", .x),
+                       exdir = str_c("Data/Dec 2020/CNALH/WKTs/Unzipped/", .x),
+                       overwrite = TRUE))
+```
+
+```{r import and glue CNALH WKTs}
+CNALHwkts_occpath <- "Data/Dec 2020/CNALH/WKTs/Unzipped/"
+CNALHwkts_occdirs <- list.files(CNALHwkts_occpath)
+
+CNALH_wkts <- read_csv("Data/Dec 2020/CNALH/Headers.csv", col_types = cols(.default = "c"))
+
+for(dir in CNALHwkts_occdirs) {
+  sub_folders = list.files(paste(CNALHwkts_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(CNALHwkts_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    CNALH_wkts = rbind(CNALH_wkts,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(CNALHwkts_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(CNALHwkts_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        CNALH_terms = rbind(CNALH_wkts,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+
+  
+
+```
+
+# The final gluing
+
+Now that we have both a CNALH term and a CNALH WKT dataset, we need to remove as many duplicates as we possibly can. CNALH is the master "bugs" dataset, so we won't compare it to any other datasets. 
+
+```{r dupe clear}
+CNALH_all <- full_join(CNALH_terms, CNALH_wkts)
+CNALH_all_dist <- distinct(CNALH_all, id, .keep_all = TRUE)
+CNALH_all_dist_2 <- distinct(CNALH_all_dist, occurrenceID, .keep_all = TRUE)
+
+write.csv(CNALH_all_dist_2, file = "Data/Dec 2020/CNALH/CNALH_Clean.csv", na="", row.names=FALSE)
+```
