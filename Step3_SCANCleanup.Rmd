@@ -114,7 +114,7 @@ Now that we have both a SCAN term and a SCAN WKT dataset, we need to remove as m
 ```{r dupe clear}
 SCAN_all <- full_join(scan_terms, scan_wkts)
 SCAN_all_dist <- distinct(SCAN_all, id, .keep_all = TRUE)
-SCAN_all_dist_2 <- distinct(SCAN_all_dist, occurrenceID, .keep_all = TRUE)
+SCAN_all_dist_2 <- distinct(SCAN_all_dist, occurrenceID, .keep_all = TRUE) 
 
 write.csv(SCAN_all_dist_2, file = "Data/Dec 2020/SCAN/SCAN_Clean.csv", na="", row.names=FALSE)
 ```
