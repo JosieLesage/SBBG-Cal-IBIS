@@ -1,0 +1,84 @@
+---
+title: "Step5_MyCoPortal"
+author: "Josie Lesage"
+date: "1/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+
+# Setup packages
+library(tidyverse)
+```
+
+# MyCoPortal Data
+
+## Cleaning data and removing potential duplicates
+The code below should be run after you have downloaded datasets for each of the islands, and the special terms searches, for the MyCoPortal database.
+
+****
+To begin, use ctrl+F to find and *replace all* of the previous dates (for instance, "Dec 2020") with the new date ("Mar 2020").
+****
+
+
+# Term Data
+To clean and generate a single data file, we must begin by extracting each zip file to its folder. 
+
+```{r MyCoPortal unzip}
+MyCoPortalterm_zipfiles <- list.files("Data/Dec 2020/MyCoPortal/Terms", pattern = "*.zip")
+
+walk(MyCoPortalterm_zipfiles, ~ unzip(zipfile = str_c("Data/Dec 2020/MyCoPortal/Terms/", .x),
+                       exdir = str_c("Data/Dec 2020/MyCoPortal/Terms/Unzipped/", .x),
+                       overwrite = TRUE))
+```
+
+Now, we extract the occurrence data for each file, and glue all of the data together.
+
+The first you run this, you're going to get a mess of warnings. Just ID the file names and lines from the warning and get rid of the damn backslahes (/) that someone put into the occurrence remarks.
+
+```{r extract csvs and glue}
+MyCoPortalterm_occpath <- "Data/Dec 2020/MyCoPortal/Terms/Unzipped/"
+MyCoPortalterm_occdirs <- list.files(MyCoPortalterm_occpath)
+
+
+for(dir in MyCoPortalterm_occdirs) {
+  sub_folders = list.files(paste(MyCoPortalterm_occpath,dir,sep = ""))
+  if (any(sub_folders %in% "occurrences.csv")) {
+    ## search for "occurrences.csv" in the directory, append to a data.frame if so
+    temp_data = read_csv(file = paste(MyCoPortalterm_occpath,dir,"/occurrences.csv",sep = ""), col_types = cols(.default = "c"))
+    MyCoPortal_terms = rbind(MyCoPortal_terms,temp_data);
+  } else {
+    ## if we can't find it, search one directory deeper
+    for(sub_dir in sub_folders) {
+      sub_sub_files = list.files(paste(MyCoPortalterm_occpath,dir,"/",sub_dir,sep = ""))             
+      if (any(sub_sub_files %in% "occurrences.csv")) {
+        ## found occurrences.csv read it in and append it
+        temp_data = read.csv(file = paste(MyCoPortalterm_occpath,dir,"/",sub_dir,"/occurrences.csv",sep = ""))
+        MyCoPortal_terms = rbind(MyCoPortal_terms,temp_data);
+      } else {
+        warning("could not find the file 'occurrences.csv' two directories deep")
+      }
+    } 
+  }
+}
+
+```
+
+Voila, "MyCoPortal_terms" is a huge dataset and has everyone (but has many dupes). 
+
+# WKT data
+There does not currently appear to be a functional way to search spatially in MyCoPortal.
+
+
+# The final gluing
+
+We need to remove as many duplicates as we possibly can. 
+
+```{r dupe clear}
+MyCoPortal_all <- MyCoPortal_terms
+MyCoPortal_all_dist <- distinct(MyCoPortal_all, id, .keep_all = TRUE)
+MyCoPortal_all_dist_2 <- distinct(MyCoPortal_all, occurrenceID, .keep_all = TRUE)
+
+write.csv(MyCoPortal_all_dist_2, file = "Data/Dec 2020/MyCoPortal/MyCoPortal_Clean.csv", na="", row.names=FALSE)
+```
