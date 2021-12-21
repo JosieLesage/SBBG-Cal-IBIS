@@ -31,20 +31,38 @@ To begin, use ctrl+F to find and *replace all* of the previous dates (for instan
 ```{r removing duplicates from Bugs}
 # This line reads the Darwin core occurrence records .txt file that you unzipped from the appropriate folder
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-arthro_raw <- read.delim("Data/Dec 2020/GBIF/Raw/Arthropods/occurrence.txt")
+arthro_raw <- read.delim("Data/Dec 2020/GBIF/Raw/Arthropods/occurrence.txt") 
 
-# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
-inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%
-  rename(institutionCode = InstitutionCode,
-         collectionCode = CollectionCode)
+## --------------- This is the original method - anti-join by codes already pulled out. 
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
+# inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%   rename(institutionCode = InstitutionCode,         collectionCode = CollectionCode)
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+# arthro_clean1 <- anti_join(arthro_raw, inCode, by = "institutionCode")
+# arthro_clean2 <- anti_join(arthro_clean1, inCode, by = "collectionCode")
 
-# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
-arthro_clean1 <- anti_join(arthro_raw, inCode, by = "institutionCode")
-arthro_clean2 <- anti_join(arthro_clean1, inCode, by = "collectionCode")
+
+## --------------- !!!! This is the new way that compares datasets directly, leaves more GBIF in !!!!
+scan_clean <- read_csv("Data/Dec 2020/SCAN/SCAN_Clean.csv", 
+                       col_types = cols(.default = "c")) %>%
+  mutate(identifier = occurrenceID)
+ecdysis_clean <- read_csv("Data/Dec 2020/Ecdysis/Ecdysis_Clean.csv", 
+                         col_types = cols(.default = "c")) %>%
+  mutate(identifier = occurrenceID)
+
+# these steps clean the GBIF plant data by filtering out anything that already has a match in CCH or SEINet.
+arthro_process1 <- anti_join(arthro_raw, scan_clean, by = "identifier")
+arthro_process2 <- anti_join(arthro_process1, scan_clean, by = "occurrenceID")
+arthro_process3 <- anti_join(arthro_process2, scan_clean, by = "institutionCode")
+arthro_process4 <- anti_join(arthro_process3, ecdysis_clean, by = "occurrenceID")
+arthro_process5 <- anti_join(arthro_process4, ecdysis_clean, by = "identifier")
+arthro_process6 <- anti_join(arthro_process5, ecdysis_clean, by = "institutionCode") %>%
+  filter(!str_detect(issue, "DIFFERENT_OWNER_INSTITUTION"))
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (arthro_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_arthropods_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (arthro_process6, 
+           file = "Data/Dec 2020/GBIF/Clean Data/GBIF_arthropods_clean_Feb21.csv",
+           na="", row.names=FALSE)
 ```
 
 ### Fungi
@@ -54,18 +72,30 @@ write.csv (arthro_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_arthropods_
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
 fungi_raw <- read.delim("Data/Dec 2020/GBIF/Raw/Fungi/occurrence.txt")
 
-# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent.
-inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%
-  rename(institutionCode = InstitutionCode,
-         collectionCode = CollectionCode)
+## --------------- This is the original method - anti-join by codes already pulled out. 
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
+# inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%   rename(institutionCode = InstitutionCode,         collectionCode = CollectionCode)
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
+# fungi_clean1 <- anti_join(fungi_raw, inCode, by = "institutionCode")
+# fungi_clean2 <- anti_join(fungi_clean1, inCode, by = "collectionCode")
 
-# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
-fungi_clean1 <- anti_join(fungi_raw, inCode, by = "institutionCode")
-fungi_clean2 <- anti_join(fungi_clean1, inCode, by = "collectionCode")
+## --------------- !!!! This is the new way that compares datasets directly, leaves more GBIF in !!!!
+MyCo_clean <- read_csv("Data/Dec 2020/MyCoPortal/MyCoPortal_Clean.csv", 
+                       col_types = cols(.default = "c")) %>%
+  mutate(identifier = occurrenceID)
+
+# these steps clean the GBIF fungi data by filtering out anything that already has a match  in MyCoPortal
+fungi_process1 <- anti_join(fungi_raw, MyCo_clean, by = "identifier")
+fungi_process2 <- anti_join(fungi_process1, MyCo_clean, by = "occurrenceID")
+fungi_process3 <- anti_join(fungi_process2, MyCo_clean, by = "institutionCode") %>%
+  filter(!str_detect(issue, "DIFFERENT_OWNER_INSTITUTION"))
 
 # This line saves the data as a .csv in the appropriate folder with a new name
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
-write.csv (fungi_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fungi_clean_Dec 2020.csv", na="", row.names=FALSE)
+write.csv (fungi_process3, 
+           file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fungi_clean_Dec 2020.csv",
+           na="", row.names=FALSE)
+
 ```
 
 ### Plants
@@ -75,19 +105,17 @@ write.csv (fungi_clean2, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_fungi_clean_
 ## **__THIS IS WHERE YOU WOULD CHANGE THE DATE__**
 plant_raw <- read_tsv("Data/Dec 2020/GBIF/Raw/Plants/occurrence.txt", col_types = cols(.default = "c"))
 
-# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
-inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%
-  rename(institutionCode = InstitutionCode,
-         collectionCode = CollectionCode)
 
-# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
 
 ## --------------- This is the original method - anti-join by codes already pulled out. 
+# This line reads the institutional codes CSV, which we will use to remove the dupes from symbiota. Technically we don't need to do this after the first time, but it doesn't hurt to keep consistent. 
+# inCode <- read.csv ("PaigeFiles/NA_inCodes_updated2020.csv") %>%   rename(institutionCode = InstitutionCode,         collectionCode = CollectionCode)
+# These two lines of code take the downloaded data and remove the records that match the collections and institutions already included in symbiota
 # plant_clean1 <- anti_join(plant_raw, inCode, by = "institutionCode")
 # plant_clean2 <- anti_join(plant_clean1, inCode, by = "collectionCode")
 
-## --------------- !!!! This is the new way that compares datasets directly, leaves more GBIF in !!!!
 
+## --------------- !!!! This is the new way that compares datasets directly, leaves more GBIF in !!!!
 cch2_clean <- read_csv("Data/Dec 2020/CCH2/CCH_Clean.csv", col_types = cols(.default = "c")) %>%
   mutate(identifier = occurrenceID)
 seinet_clean <- read_csv("Data/Dec 2020/SEINet/SEINet_Clean.csv", col_types = cols(.default = "c")) %>%
@@ -108,7 +136,8 @@ write.csv (plant_process6, file = "Data/Dec 2020/GBIF/Clean Data/GBIF_plants_cle
 ```
 
 ## Cut up the big files into multiple parts
-Cutting the large datasets into smaller pieces makes it easier to upload to symbiota. In the future, we may need to increase the number of slices.
+Cutting the large datasets into smaller pieces makes it easier to upload to symbiota. 
+**In the future, we may need to increase the number of slices.**
 
 ```{r cut up big files}
 amphibia <- read.delim("Data/Dec 2020/GBIF/Raw/Amphibia/occurrence.txt", quote = "")
