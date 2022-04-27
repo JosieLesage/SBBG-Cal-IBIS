@@ -1,0 +1,46 @@
+---
+title: "Step_X_HymenopteraForKylie"
+author: "Josie Lesage"
+date: "4/27/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = TRUE)
+
+# Setup packages
+library(rgbif)
+library(tidyverse)
+```
+
+
+```{r prep all data downloads}
+all_dl <- occ_download_queue(
+  
+# Arthropods
+occ_download(user = "jlesage", 
+             pwd = "GBIF4SBBG",
+             email = "jlesage@sbbg.org",
+             format = "DWCA",
+             pred("taxonKey", 54),
+             pred("institutionCode", "LACM")
+             )
+)
+
+```
+
+
+```{r show download list}
+occ_download_list(user = "jlesage", 
+             pwd = "GBIF4SBBG", 
+             limit = 5)
+
+```
+
+
+```{r}
+occ_download_get(## change this: "0132550-200613084148143",
+                 overwrite = TRUE,
+                ## change path: path = "Data/Dec 2020/GBIF/Raw")
+```
+
